@@ -1,0 +1,166 @@
+{
+ "updated": "2026-06-12T09:30:09+00:00",
+ "edge": {
+  "w": 72,
+  "l": 48,
+  "pending": 1,
+  "pct": 0.6,
+  "brier": 0.2381
+ },
+ "all": {
+  "w": 309,
+  "l": 247,
+  "pending": 15,
+  "pct": 0.556,
+  "brier": 0.2469
+ },
+ "by_date": [
+  {
+   "date": "2026-06-12",
+   "edge_w": 0,
+   "edge_l": 0,
+   "all_w": 0,
+   "all_l": 0
+  },
+  {
+   "date": "2026-06-11",
+   "edge_w": 1,
+   "edge_l": 0,
+   "all_w": 6,
+   "all_l": 1
+  },
+  {
+   "date": "2026-06-10",
+   "edge_w": 1,
+   "edge_l": 0,
+   "all_w": 5,
+   "all_l": 10
+  },
+  {
+   "date": "2026-06-09",
+   "edge_w": 0,
+   "edge_l": 0,
+   "all_w": 9,
+   "all_l": 6
+  },
+  {
+   "date": "2026-06-08",
+   "edge_w": 1,
+   "edge_l": 0,
+   "all_w": 6,
+   "all_l": 2
+  },
+  {
+   "date": "2026-06-07",
+   "edge_w": 3,
+   "edge_l": 1,
+   "all_w": 9,
+   "all_l": 6
+  },
+  {
+   "date": "2026-06-06",
+   "edge_w": 3,
+   "edge_l": 0,
+   "all_w": 10,
+   "all_l": 4
+  },
+  {
+   "date": "2026-06-05",
+   "edge_w": 3,
+   "edge_l": 1,
+   "all_w": 8,
+   "all_l": 7
+  },
+  {
+   "date": "2026-06-04",
+   "edge_w": 1,
+   "edge_l": 2,
+   "all_w": 4,
+   "all_l": 5
+  },
+  {
+   "date": "2026-06-03",
+   "edge_w": 1,
+   "edge_l": 3,
+   "all_w": 5,
+   "all_l": 10
+  },
+  {
+   "date": "2026-06-02",
+   "edge_w": 2,
+   "edge_l": 2,
+   "all_w": 8,
+   "all_l": 7
+  },
+  {
+   "date": "2026-06-01",
+   "edge_w": 1,
+   "edge_l": 1,
+   "all_w": 3,
+   "all_l": 6
+  },
+  {
+   "date": "2026-05-31",
+   "edge_w": 3,
+   "edge_l": 1,
+   "all_w": 11,
+   "all_l": 4
+  },
+  {
+   "date": "2026-05-30",
+   "edge_w": 1,
+   "edge_l": 2,
+   "all_w": 9,
+   "all_l": 6
+  },
+  {
+   "date": "2026-05-29",
+   "edge_w": 2,
+   "edge_l": 0,
+   "all_w": 12,
+   "all_l": 3
+  },
+  {
+   "date": "2026-05-28",
+   "edge_w": 0,
+   "edge_l": 3,
+   "all_w": 2,
+   "all_l": 4
+  },
+  {
+   "date": "2026-05-27",
+   "edge_w": 2,
+   "edge_l": 0,
+   "all_w": 10,
+   "all_l": 5
+  },
+  {
+   "date": "2026-05-26",
+   "edge_w": 3,
+   "edge_l": 0,
+   "all_w": 9,
+   "all_l": 6
+  },
+  {
+   "date": "2026-05-25",
+   "edge_w": 2,
+   "edge_l": 1,
+   "all_w": 7,
+   "all_l": 6
+  },
+  {
+   "date": "2026-05-24",
+   "edge_w": 1,
+   "edge_l": 3,
+   "all_w": 6,
+   "all_l": 9
+  },
+  {
+   "date": "2026-05-23",
+   "edge_w": 1,
+   "edge_l": 2,
+   "all_w": 4,
+   "all_l": 10
+  }
+ ]
+}

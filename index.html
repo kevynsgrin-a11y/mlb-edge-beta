@@ -53,6 +53,9 @@
 <div class="banner">HYPOTHETICAL MONEY ONLY - beta validation. No real wagers are placed or tracked here.</div>
 <div class="meta" id="meta">loading board...</div>
 
+<h2>Model Track Record <span class="dim" style="font-weight:400">objective W-L — did the model's side win (no money)</span></h2>
+<div class="stats" id="record"><span class="dim">loading record...</span></div>
+
 <h2>Edge Picks</h2>
 <div class="cards" id="edgeCards"><span class="dim">-</span></div>
 
@@ -98,6 +101,20 @@ async function fetchBoard() {
     `Slate ${BOARD.date} - generated ${BOARD.generated_at} - model fit ${BOARD.model.fit_seasons.join("+")} ` +
     `(walk-forward Brier ${BOARD.model.walkforward_brier}) - edge floor ${BOARD.model.confidence_floor}`;
   renderBoard(); renderSlipOptions();
+}
+
+async function fetchRecord() {
+  try {
+    const r = await fetch("data/record.json", {cache:"no-store"});
+    if (!r.ok) return;
+    const d = await r.json();
+    const e = d.edge, a = d.all;
+    $("#record").innerHTML =
+      `<div class="stat"><b class="${e.pct >= 0.524 ? "pos" : "neg"}">${e.w}-${e.l}</b><span>edge picks (${(e.pct*100).toFixed(1)}%)</span></div>` +
+      `<div class="stat"><b>${a.w}-${a.l}</b><span>all picks (${(a.pct*100).toFixed(1)}%)</span></div>` +
+      `<div class="stat"><b>${a.brier ?? "-"}</b><span>brier (calibration)</span></div>` +
+      `<div class="stat"><b>${e.pending}</b><span>edge pending</span></div>`;
+  } catch (e) { /* record optional */ }
 }
 
 async function fetchLive(dates) {
@@ -258,6 +275,7 @@ async function refresh() {
 
 (async () => {
   await fetchBoard();
+  await fetchRecord();
   await refresh();
   setInterval(refresh, 60000);
 })();
