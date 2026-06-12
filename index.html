@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MLB Edge Engine - Beta (Hypothetical Money)</title>
+<style>
+  :root {
+    --bg:#0d1117; --panel:#161b22; --line:#30363d; --text:#e6edf3;
+    --dim:#8b949e; --green:#3fb950; --red:#f85149; --gold:#d29922;
+    --blue:#58a6ff; --pick:#1f6feb22;
+  }
+  * { box-sizing:border-box; margin:0; }
+  body { background:var(--bg); color:var(--text);
+         font:14px/1.45 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+         padding:16px; max-width:1100px; margin:0 auto; }
+  h1 { font-size:20px; letter-spacing:.5px; }
+  h2 { font-size:15px; margin:18px 0 8px; color:var(--blue); }
+  .banner { background:#3d1d00; border:1px solid var(--gold); color:var(--gold);
+            padding:8px 12px; border-radius:8px; margin:10px 0; font-weight:600; }
+  .meta { color:var(--dim); font-size:12px; margin-top:2px; }
+  .cards { display:flex; gap:10px; flex-wrap:wrap; }
+  .card { background:var(--panel); border:1px solid var(--gold); border-radius:10px;
+          padding:12px 14px; min-width:240px; flex:1; }
+  .card .conf { font-size:24px; font-weight:700; color:var(--gold); }
+  table { width:100%; border-collapse:collapse; background:var(--panel);
+          border:1px solid var(--line); border-radius:10px; overflow:hidden; }
+  th, td { padding:7px 9px; text-align:left; border-bottom:1px solid var(--line);
+           font-size:13px; }
+  th { color:var(--dim); font-weight:600; font-size:11px; text-transform:uppercase; }
+  tr.edge { background:var(--pick); }
+  .bar { height:6px; background:#21262d; border-radius:3px; width:90px; position:relative; }
+  .bar i { position:absolute; top:0; bottom:0; left:0; background:var(--blue); border-radius:3px; }
+  .pos { color:var(--green); } .neg { color:var(--red); } .dim { color:var(--dim); }
+  .badge { font-size:10px; padding:1px 7px; border-radius:9px; border:1px solid; }
+  .b-live { color:var(--green); border-color:var(--green); }
+  .b-final { color:var(--dim); border-color:var(--dim); }
+  .b-pre { color:var(--blue); border-color:var(--blue); }
+  form.slip { background:var(--panel); border:1px solid var(--line); border-radius:10px;
+              padding:12px; display:flex; gap:8px; flex-wrap:wrap; align-items:end; }
+  label { display:flex; flex-direction:column; gap:3px; font-size:11px; color:var(--dim); }
+  input, select, button { background:#0d1117; color:var(--text); border:1px solid var(--line);
+                          border-radius:6px; padding:6px 8px; font-size:13px; }
+  button { background:#1f6feb; border:none; cursor:pointer; font-weight:600; }
+  button.danger { background:transparent; border:1px solid var(--red); color:var(--red); }
+  .stats { display:flex; gap:18px; flex-wrap:wrap; margin:8px 0; }
+  .stat b { font-size:20px; display:block; }
+  .stat span { color:var(--dim); font-size:11px; text-transform:uppercase; }
+</style>
+</head>
+<body>
+<h1>MLB EDGE ENGINE <span class="dim">/ beta</span></h1>
+<div class="banner">HYPOTHETICAL MONEY ONLY - beta validation. No real wagers are placed or tracked here.</div>
+<div class="meta" id="meta">loading board...</div>
+
+<h2>Edge Picks</h2>
+<div class="cards" id="edgeCards"><span class="dim">-</span></div>
+
+<h2>Full Model Board</h2>
+<table id="board"><thead><tr>
+  <th>Matchup</th><th>Status</th><th>P(home)</th><th></th><th>Pick</th>
+  <th>Conf</th><th>Starters (proj ER/27)</th>
+</tr></thead><tbody></tbody></table>
+
+<h2>Log Hypothetical Bet <span class="dim" style="font-weight:400">(manual odds entry - copy the live line from your book)</span></h2>
+<form class="slip" id="slip">
+  <label>Game<select id="betGame"></select></label>
+  <label>Side<select id="betSide"></select></label>
+  <label>American odds<input id="betOdds" type="number" placeholder="-130" required style="width:90px"></label>
+  <label>Stake $<input id="betStake" type="number" value="125" min="1" style="width:80px"></label>
+  <button type="submit">Add bet</button>
+</form>
+
+<h2>Hypothetical Ledger</h2>
+<div class="stats" id="ledgerStats"></div>
+<table id="ledger"><thead><tr>
+  <th>Date</th><th>Bet</th><th>Odds</th><th>Stake</th><th>Result</th><th>P&amp;L</th><th></th>
+</tr></thead><tbody></tbody></table>
+<p style="margin-top:8px"><button class="danger" id="exportCsv">Export CSV</button></p>
+
+<script>
+"use strict";
+const SAPI = "https://statsapi.mlb.com/api/v1/schedule?sportId=1";
+let BOARD = null;          // picks.json content
+let LIVE = {};             // game_pk -> {state, detail, awayScore, homeScore}
+const LS_KEY = "mlbedge_ledger_v1";
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function loadLedger() { try { return JSON.parse(localStorage.getItem(LS_KEY)) || []; } catch { return []; } }
+function saveLedger(l) { localStorage.setItem(LS_KEY, JSON.stringify(l)); }
+
+async function fetchBoard() {
+  const r = await fetch("data/picks.json", {cache:"no-store"});
+  BOARD = await r.json();
+  $("#meta").textContent =
+    `Slate ${BOARD.date} - generated ${BOARD.generated_at} - model fit ${BOARD.model.fit_seasons.join("+")} ` +
+    `(walk-forward Brier ${BOARD.model.walkforward_brier}) - edge floor ${BOARD.model.confidence_floor}`;
+  renderBoard(); renderSlipOptions();
+}
+
+async function fetchLive(dates) {
+  for (const d of dates) {
+    try {
+      const r = await fetch(`${SAPI}&date=${d}`);
+      const j = await r.json();
+      for (const day of j.dates || []) for (const g of day.games || []) {
+        LIVE[g.gamePk] = {
+          state: g.status?.abstractGameState || "", detail: g.status?.detailedState || "",
+          awayScore: g.teams?.away?.score, homeScore: g.teams?.home?.score,
+          awayName: g.teams?.away?.team?.name, homeName: g.teams?.home?.team?.name,
+        };
+      }
+    } catch (e) { /* offline-tolerant: board still renders */ }
+  }
+}
+
+function statusBadge(pk) {
+  const s = LIVE[pk];
+  if (!s) return '<span class="badge b-pre">PRE</span>';
+  const score = (s.awayScore != null) ? ` ${s.awayScore}-${s.homeScore}` : "";
+  if (s.state === "Live") return `<span class="badge b-live">LIVE${score}</span>`;
+  if (s.state === "Final") {
+    if (/Postponed|Cancelled|Suspended/.test(s.detail)) return `<span class="badge b-final">${esc(s.detail.toUpperCase())}</span>`;
+    return `<span class="badge b-final">FINAL${score}</span>`;
+  }
+  return '<span class="badge b-pre">PRE</span>';
+}
+
+function renderBoard() {
+  const tb = $("#board tbody"); tb.innerHTML = "";
+  const cards = $("#edgeCards"); cards.innerHTML = "";
+  for (const g of BOARD.games) {
+    const isEdge = BOARD.edge_picks.includes(g.game_pk);
+    const tr = document.createElement("tr");
+    if (isEdge) tr.className = "edge";
+    const p = g.p_home;
+    const starters = [
+      g.away_starter ? `${esc(g.away_starter)}${g.away_proj ? ` (${(27*g.away_proj.er/g.away_proj.outs).toFixed(1)})` : ""}` : "TBD",
+      g.home_starter ? `${esc(g.home_starter)}${g.home_proj ? ` (${(27*g.home_proj.er/g.home_proj.outs).toFixed(1)})` : ""}` : "TBD",
+    ].join(" v ");
+    tr.innerHTML =
+      `<td>${esc(g.away)} @ <b>${esc(g.home)}</b></td>` +
+      `<td>${statusBadge(g.game_pk)}</td>` +
+      `<td>${p == null ? "-" : p.toFixed(3)}</td>` +
+      `<td>${p == null ? "" : `<div class="bar"><i style="width:${(p*100).toFixed(0)}%"></i></div>`}</td>` +
+      `<td>${esc(g.pick || "-")}${isEdge ? ' <span class="badge" style="color:var(--gold);border-color:var(--gold)">EDGE</span>' : ""}</td>` +
+      `<td>${g.confidence ? g.confidence.toFixed(3) : "-"}</td>` +
+      `<td class="dim">${starters}</td>`;
+    tb.appendChild(tr);
+    if (isEdge) {
+      const c = document.createElement("div"); c.className = "card";
+      c.innerHTML = `<div class="conf">${(g.confidence*100).toFixed(1)}%</div>` +
+        `<b>${esc(g.pick)}</b><div class="dim">${esc(g.away)} @ ${esc(g.home)}</div>` +
+        `<div class="dim" style="margin-top:4px">${starters}</div>`;
+      cards.appendChild(c);
+    }
+  }
+  if (!cards.children.length)
+    cards.innerHTML = '<span class="dim">No game clears the confidence floor today - no forced picks, by design.</span>';
+}
+
+function renderSlipOptions() {
+  const gs = $("#betGame"); gs.innerHTML = "";
+  for (const g of BOARD.games) {
+    if (g.p_home == null) continue;
+    const o = document.createElement("option");
+    o.value = g.game_pk; o.textContent = `${g.away} @ ${g.home}`;
+    gs.appendChild(o);
+  }
+  gs.onchange = () => {
+    const g = BOARD.games.find(x => x.game_pk == gs.value);
+    const sd = $("#betSide"); sd.innerHTML = "";
+    for (const t of [g.away, g.home]) {
+      const o = document.createElement("option");
+      o.value = t; o.textContent = t + (g.pick === t ? "  (model pick)" : "");
+      if (g.pick === t) o.selected = true;
+      sd.appendChild(o);
+    }
+  };
+  if (gs.options.length) gs.onchange();
+}
+
+function settle(bet) {
+  const s = LIVE[bet.game_pk];
+  if (!s || s.state !== "Final") return bet;
+  if (/Postponed|Cancelled|Suspended/.test(s.detail)) { bet.result = "void"; bet.pnl = 0; return bet; }
+  if (s.awayScore == null || s.homeScore == null || s.awayScore === s.homeScore) return bet;
+  const winner = s.homeScore > s.awayScore ? s.homeName : s.awayName;
+  const won = winner === bet.side;
+  bet.result = won ? "win" : "loss";
+  bet.pnl = won ? (bet.odds > 0 ? bet.stake * bet.odds / 100 : bet.stake * 100 / -bet.odds) : -bet.stake;
+  bet.pnl = Math.round(bet.pnl * 100) / 100;
+  return bet;
+}
+
+function renderLedger() {
+  let ledger = loadLedger().map(settle);
+  saveLedger(ledger);
+  const tb = $("#ledger tbody"); tb.innerHTML = "";
+  let pnl = 0, w = 0, l = 0, staked = 0;
+  ledger.forEach((b, i) => {
+    if (b.result === "win") w++; else if (b.result === "loss") l++;
+    if (b.pnl != null) pnl += b.pnl;
+    if (b.result && b.result !== "void") staked += b.stake;
+    const tr = document.createElement("tr");
+    const res = b.result || "pending";
+    tr.innerHTML =
+      `<td>${esc(b.date)}</td><td>${esc(b.side)} <span class="dim">(${esc(b.matchup)})</span></td>` +
+      `<td>${b.odds > 0 ? "+" : ""}${b.odds}</td><td>$${b.stake}</td>` +
+      `<td class="${res === "win" ? "pos" : res === "loss" ? "neg" : "dim"}">${res}</td>` +
+      `<td class="${(b.pnl || 0) >= 0 ? "pos" : "neg"}">${b.pnl == null ? "-" : "$" + b.pnl.toFixed(2)}</td>` +
+      `<td><button class="danger" data-i="${i}" style="padding:2px 8px">x</button></td>`;
+    tb.appendChild(tr);
+  });
+  tb.onclick = e => {
+    const i = e.target?.dataset?.i;
+    if (i != null) { const lg = loadLedger(); lg.splice(+i, 1); saveLedger(lg); renderLedger(); }
+  };
+  const roi = staked ? (pnl / staked * 100).toFixed(1) : "0.0";
+  $("#ledgerStats").innerHTML =
+    `<div class="stat"><b class="${pnl >= 0 ? "pos" : "neg"}">$${pnl.toFixed(2)}</b><span>hypothetical P&amp;L</span></div>` +
+    `<div class="stat"><b>${w}-${l}</b><span>record</span></div>` +
+    `<div class="stat"><b class="${pnl >= 0 ? "pos" : "neg"}">${roi}%</b><span>ROI on settled</span></div>` +
+    `<div class="stat"><b>${ledger.filter(b => !b.result).length}</b><span>pending</span></div>`;
+}
+
+$("#slip").onsubmit = e => {
+  e.preventDefault();
+  const g = BOARD.games.find(x => x.game_pk == $("#betGame").value);
+  const ledger = loadLedger();
+  ledger.push({
+    date: BOARD.date, game_pk: g.game_pk, matchup: `${g.away} @ ${g.home}`,
+    side: $("#betSide").value, odds: +$("#betOdds").value,
+    stake: +$("#betStake").value, placed_at: new Date().toISOString(),
+  });
+  saveLedger(ledger); renderLedger(); $("#betOdds").value = "";
+};
+
+$("#exportCsv").onclick = () => {
+  const rows = [["date","matchup","side","odds","stake","result","pnl"]];
+  for (const b of loadLedger())
+    rows.push([b.date, b.matchup, b.side, b.odds, b.stake, b.result || "pending", b.pnl ?? ""]);
+  const csv = rows.map(r => r.map(v => `"${String(v).replace(/"/g, '""')}"`).join(",")).join("\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([csv], {type:"text/csv"}));
+  a.download = "mlbedge_ledger.csv"; a.click();
+};
+
+async function refresh() {
+  const dates = new Set([BOARD?.date].filter(Boolean));
+  for (const b of loadLedger()) if (!b.result) dates.add(b.date);
+  await fetchLive([...dates]);
+  if (BOARD) renderBoard();
+  renderLedger();
+}
+
+(async () => {
+  await fetchBoard();
+  await refresh();
+  setInterval(refresh, 60000);
+})();
+</script>
+</body>
+</html>
