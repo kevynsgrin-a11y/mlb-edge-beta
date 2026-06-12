@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>Edge Engine</title>
+<style>
+  :root {
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2129; --line:#30363d;
+    --text:#e6edf3; --dim:#8b949e; --green:#3fb950; --red:#f85149;
+    --gold:#d29922; --blue:#58a6ff; --nav-h:62px;
+  }
+  * { box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html, body { background:var(--bg); color:var(--text); }
+  body { font:15px/1.45 -apple-system,"Segoe UI",Roboto,sans-serif;
+         max-width:520px; margin:0 auto;
+         padding:0 12px calc(var(--nav-h) + env(safe-area-inset-bottom) + 16px); }
+  header { position:sticky; top:0; z-index:5; background:var(--bg);
+           padding:14px 2px 10px; display:flex; align-items:center; gap:10px;
+           border-bottom:1px solid var(--line); }
+  header h1 { font-size:17px; letter-spacing:.4px; flex:1; }
+  header h1 span { color:var(--gold); }
+  .iconbtn { background:var(--panel); border:1px solid var(--line); color:var(--text);
+             border-radius:10px; min-width:44px; height:40px; font-size:16px;
+             display:flex; align-items:center; justify-content:center; padding:0 10px; }
+  .meta { color:var(--dim); font-size:11.5px; padding:8px 2px; }
+  .banner { background:#3d1d00; border:1px solid var(--gold); color:var(--gold);
+            padding:8px 10px; border-radius:10px; margin:8px 0; font-weight:600;
+            font-size:12.5px; }
+  h2 { font-size:13px; margin:16px 2px 8px; color:var(--blue);
+       text-transform:uppercase; letter-spacing:.6px; }
+  .view { display:none; } .view.active { display:block; }
+  /* cards */
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:14px;
+          padding:12px 14px; margin-bottom:10px; }
+  .card.edge { border-color:var(--gold); }
+  .row { display:flex; align-items:center; gap:8px; }
+  .grow { flex:1; min-width:0; }
+  .matchup { font-weight:700; font-size:15.5px; }
+  .sub { color:var(--dim); font-size:12px; margin-top:2px; }
+  .bigconf { font-size:26px; font-weight:800; color:var(--gold); }
+  .badge { font-size:10px; padding:2px 8px; border-radius:10px; border:1px solid;
+           white-space:nowrap; }
+  .b-live { color:var(--green); border-color:var(--green); }
+  .b-final { color:var(--dim); border-color:var(--dim); }
+  .b-pre { color:var(--blue); border-color:var(--blue); }
+  .b-edge { color:var(--gold); border-color:var(--gold); font-weight:700; }
+  .bar { height:7px; background:#21262d; border-radius:4px; margin:8px 0 4px;
+         position:relative; overflow:hidden; }
+  .bar i { position:absolute; inset:0 auto 0 0; background:var(--blue); }
+  .pickline { font-size:13px; margin-top:6px; }
+  .pickline b { color:var(--text); }
+  .betbtn { background:#1f6feb; border:none; color:#fff; font-weight:700;
+            border-radius:10px; padding:9px 16px; font-size:13.5px; }
+  .pos { color:var(--green); } .neg { color:var(--red); } .dim { color:var(--dim); }
+  /* stats strip */
+  .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin:8px 0; }
+  .stat { background:var(--panel); border:1px solid var(--line); border-radius:12px;
+          padding:9px 6px; text-align:center; }
+  .stat b { display:block; font-size:17px; }
+  .stat span { color:var(--dim); font-size:9.5px; text-transform:uppercase; }
+  /* bottom nav */
+  nav { position:fixed; left:0; right:0; bottom:0; z-index:10;
+        background:var(--panel); border-top:1px solid var(--line);
+        padding-bottom:env(safe-area-inset-bottom); display:flex;
+        max-width:520px; margin:0 auto; }
+  nav button { flex:1; background:none; border:none; color:var(--dim);
+               height:var(--nav-h); font-size:11px; display:flex;
+               flex-direction:column; align-items:center; justify-content:center;
+               gap:3px; }
+  nav button .ic { font-size:20px; line-height:1; }
+  nav button.on { color:var(--gold); }
+  /* bottom sheet */
+  #sheetWrap { position:fixed; inset:0; z-index:20; display:none; }
+  #sheetWrap.open { display:block; }
+  #shade { position:absolute; inset:0; background:#000a; }
+  #sheet { position:absolute; left:0; right:0; bottom:0; max-width:520px;
+           margin:0 auto; background:var(--panel2); border-radius:18px 18px 0 0;
+           border:1px solid var(--line); border-bottom:none;
+           padding:16px 16px calc(18px + env(safe-area-inset-bottom)); }
+  #sheet h3 { font-size:15px; margin-bottom:12px; }
+  .chips { display:flex; gap:8px; flex-wrap:wrap; margin:8px 0 14px; }
+  .chip { background:var(--panel); border:1.5px solid var(--line); color:var(--text);
+          border-radius:20px; padding:9px 14px; font-size:13.5px; }
+  .chip.on { border-color:var(--gold); color:var(--gold); font-weight:700; }
+  .fieldrow { display:flex; gap:10px; align-items:center; margin:10px 0; }
+  .fieldrow label { color:var(--dim); font-size:12px; width:52px; }
+  .fieldrow input { background:var(--bg); border:1px solid var(--line);
+                    color:var(--text); border-radius:10px; padding:10px;
+                    font-size:16px; width:110px; text-align:center; }
+  .step { background:var(--panel); border:1px solid var(--line); color:var(--text);
+          border-radius:10px; width:44px; height:44px; font-size:18px; }
+  #confirmBet { width:100%; background:#1f6feb; border:none; color:#fff;
+                font-weight:800; font-size:15px; border-radius:12px;
+                padding:14px; margin-top:10px; }
+  .betcard .delete { background:none; border:1px solid var(--red); color:var(--red);
+                     border-radius:8px; padding:4px 10px; font-size:11px; }
+  .listrow { display:flex; justify-content:space-between; padding:9px 4px;
+             border-bottom:1px solid var(--line); font-size:13.5px; }
+  .ghost { width:100%; background:var(--panel); color:var(--text);
+           border:1px solid var(--line); border-radius:12px; padding:12px;
+           font-size:13.5px; margin-top:8px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>EDGE <span>ENGINE</span></h1>
+  <button class="iconbtn" id="installBtn" style="display:none">Install</button>
+  <button class="iconbtn" id="refreshBtn" aria-label="refresh">&#8635;</button>
+</header>
+<div class="banner">HYPOTHETICAL MONEY ONLY - beta validation</div>
+<div class="meta" id="meta">loading board...</div>
+
+<!-- BOARD -->
+<section class="view active" id="view-board">
+  <h2>Edge Picks</h2>
+  <div id="edgeCards"><div class="card dim">loading...</div></div>
+  <h2>Full Board</h2>
+  <div id="gameCards"></div>
+</section>
+
+<!-- BETS -->
+<section class="view" id="view-bets">
+  <h2>Hypothetical Ledger</h2>
+  <div class="stats" id="ledgerStats"></div>
+  <div id="betCards"></div>
+  <button class="ghost" id="exportCsv">Export CSV</button>
+</section>
+
+<!-- RECORD -->
+<section class="view" id="view-record">
+  <h2>Model Track Record</h2>
+  <div class="meta">Objective W-L - did the model's side win. No money.</div>
+  <div class="stats" id="recordStats"></div>
+  <h2>Recent Slates</h2>
+  <div class="card" id="recordRows"><span class="dim">loading...</span></div>
+</section>
+
+<nav>
+  <button data-view="board" class="on"><span class="ic">&#9670;</span>Board</button>
+  <button data-view="bets"><span class="ic">&#128203;</span>Bets</button>
+  <button data-view="record"><span class="ic">&#127942;</span>Record</button>
+</nav>
+
+<!-- BET SHEET -->
+<div id="sheetWrap">
+  <div id="shade"></div>
+  <div id="sheet">
+    <h3 id="sheetTitle">Log hypothetical bet</h3>
+    <div class="dim" style="font-size:12px">Side</div>
+    <div class="chips" id="sideChips"></div>
+    <div class="dim" style="font-size:12px">American odds (copy your book's live line)</div>
+    <div class="chips" id="oddsChips"></div>
+    <div class="fieldrow">
+      <label>Odds</label>
+      <input id="betOdds" type="number" step="5" placeholder="-130">
+    </div>
+    <div class="fieldrow">
+      <label>Stake $</label>
+      <button class="step" id="stakeDown">&minus;</button>
+      <input id="betStake" type="number" value="125" min="1">
+      <button class="step" id="stakeUp">+</button>
+    </div>
+    <button id="confirmBet">Add bet</button>
+  </div>
+</div>
+
+<script>
+"use strict";
+const SAPI = "https://statsapi.mlb.com/api/v1/schedule?sportId=1";
+const LS_KEY = "mlbedge_ledger_v1";       // shared with the desktop page
+let BOARD = null, LIVE = {}, SHEET_GAME = null, SHEET_SIDE = null;
+let deferredInstall = null;
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const buzz = p => { try { navigator.vibrate && navigator.vibrate(p); } catch (e) {} };
+const loadLedger = () => { try { return JSON.parse(localStorage.getItem(LS_KEY)) || []; } catch { return []; } };
+const saveLedger = l => localStorage.setItem(LS_KEY, JSON.stringify(l));
+
+/* ---------- nav ---------- */
+document.querySelectorAll("nav button").forEach(b => b.onclick = () => {
+  buzz(8);
+  document.querySelectorAll("nav button").forEach(x => x.classList.toggle("on", x === b));
+  document.querySelectorAll(".view").forEach(v =>
+    v.classList.toggle("active", v.id === "view-" + b.dataset.view));
+});
+
+/* ---------- install prompt ---------- */
+window.addEventListener("beforeinstallprompt", e => {
+  e.preventDefault(); deferredInstall = e; $("#installBtn").style.display = "flex";
+});
+$("#installBtn").onclick = async () => {
+  if (!deferredInstall) return;
+  deferredInstall.prompt(); await deferredInstall.userChoice;
+  deferredInstall = null; $("#installBtn").style.display = "none";
+};
+
+/* ---------- data ---------- */
+async function fetchBoard() {
+  const r = await fetch("data/picks.json", {cache:"no-store"});
+  BOARD = await r.json();
+  $("#meta").textContent = `Slate ${BOARD.date} - generated ${BOARD.generated_at.slice(11,16)}Z`;
+}
+async function fetchRecord() {
+  try {
+    const r = await fetch("data/record.json", {cache:"no-store"});
+    if (!r.ok) return;
+    const d = await r.json(), e = d.edge, a = d.all;
+    $("#recordStats").innerHTML =
+      `<div class="stat"><b class="${e.pct >= 0.524 ? "pos" : "neg"}">${e.w}-${e.l}</b><span>edge ${(e.pct*100).toFixed(1)}%</span></div>` +
+      `<div class="stat"><b>${a.w}-${a.l}</b><span>all ${(a.pct*100).toFixed(1)}%</span></div>` +
+      `<div class="stat"><b>${a.brier ?? "-"}</b><span>brier</span></div>` +
+      `<div class="stat"><b>${e.pending}</b><span>pending</span></div>`;
+    $("#recordRows").innerHTML = (d.by_date || []).map(r2 =>
+      `<div class="listrow"><span>${esc(r2.date)}</span>` +
+      `<span>edge <b>${r2.edge_w}-${r2.edge_l}</b>&nbsp;&nbsp;<span class="dim">all ${r2.all_w}-${r2.all_l}</span></span></div>`
+    ).join("") || '<span class="dim">no slates yet</span>';
+  } catch (e) {}
+}
+async function fetchLive(dates) {
+  for (const d of dates) {
+    try {
+      const r = await fetch(`${SAPI}&date=${d}`);
+      const j = await r.json();
+      for (const day of j.dates || []) for (const g of day.games || []) {
+        LIVE[g.gamePk] = {
+          state: g.status?.abstractGameState || "", detail: g.status?.detailedState || "",
+          awayScore: g.teams?.away?.score, homeScore: g.teams?.home?.score,
+          awayName: g.teams?.away?.team?.name, homeName: g.teams?.home?.team?.name,
+        };
+      }
+    } catch (e) {}
+  }
+}
+function statusBadge(pk) {
+  const s = LIVE[pk];
+  if (!s) return '<span class="badge b-pre">PRE</span>';
+  const sc = s.awayScore != null ? ` ${s.awayScore}-${s.homeScore}` : "";
+  if (s.state === "Live") return `<span class="badge b-live">LIVE${sc}</span>`;
+  if (s.state === "Final") {
+    if (/Postponed|Cancelled|Suspended/.test(s.detail))
+      return `<span class="badge b-final">${esc(s.detail.toUpperCase())}</span>`;
+    return `<span class="badge b-final">FINAL${sc}</span>`;
+  }
+  return '<span class="badge b-pre">PRE</span>';
+}
+
+/* ---------- board render ---------- */
+function starterLine(g) {
+  const f = (n, p) => n ? `${esc(n)}${p ? ` (${(27*p.er/p.outs).toFixed(1)})` : ""}` : "TBD";
+  return `${f(g.away_starter, g.away_proj)} v ${f(g.home_starter, g.home_proj)}`;
+}
+function renderBoard() {
+  const edge = $("#edgeCards"), all = $("#gameCards");
+  edge.innerHTML = ""; all.innerHTML = "";
+  for (const g of BOARD.games) {
+    const isEdge = BOARD.edge_picks.includes(g.game_pk);
+    if (isEdge) {
+      edge.insertAdjacentHTML("beforeend",
+        `<div class="card edge"><div class="row">
+           <div class="grow"><div class="matchup">${esc(g.pick)}</div>
+             <div class="sub">${esc(g.away)} @ ${esc(g.home)}</div>
+             <div class="sub">${starterLine(g)}</div></div>
+           <div style="text-align:right"><div class="bigconf">${(g.confidence*100).toFixed(1)}%</div>
+             ${statusBadge(g.game_pk)}</div></div>
+         <div class="row" style="margin-top:10px">
+           <button class="betbtn grow" data-bet="${g.game_pk}">BET ${esc(g.pick)}</button></div></div>`);
+    }
+    const p = g.p_home;
+    all.insertAdjacentHTML("beforeend",
+      `<div class="card${isEdge ? " edge" : ""}"><div class="row">
+         <div class="grow"><div class="matchup">${esc(g.away)} @ ${esc(g.home)}</div>
+           <div class="sub">${starterLine(g)}</div></div>
+         ${isEdge ? '<span class="badge b-edge">EDGE</span>' : ""}${statusBadge(g.game_pk)}</div>
+       ${p == null ? '<div class="sub">insufficient data</div>' :
+         `<div class="bar"><i style="width:${(p*100).toFixed(0)}%"></i></div>
+          <div class="row pickline"><div class="grow">P(home) ${p.toFixed(3)} -
+            pick <b>${esc(g.pick)}</b> <span class="dim">(${(g.confidence*100).toFixed(1)}%)</span></div>
+            <button class="betbtn" data-bet="${g.game_pk}">BET</button></div>`}</div>`);
+  }
+  if (!edge.children.length)
+    edge.innerHTML = '<div class="card dim">No game clears the confidence floor today - no forced picks, by design.</div>';
+  document.querySelectorAll("[data-bet]").forEach(b =>
+    b.onclick = () => openSheet(+b.dataset.bet));
+}
+
+/* ---------- bet sheet ---------- */
+function openSheet(pk) {
+  const g = BOARD.games.find(x => x.game_pk === pk);
+  if (!g || g.p_home == null) return;
+  SHEET_GAME = g; SHEET_SIDE = g.pick;
+  $("#sheetTitle").textContent = `${g.away} @ ${g.home}`;
+  $("#sideChips").innerHTML = [g.away, g.home].map(t =>
+    `<button class="chip${t === SHEET_SIDE ? " on" : ""}" data-side="${esc(t)}">${esc(t)}${g.pick === t ? " &#9733;" : ""}</button>`).join("");
+  $("#oddsChips").innerHTML = [-150, -130, -110, 100, 120].map(o =>
+    `<button class="chip" data-odds="${o}">${o > 0 ? "+" : ""}${o}</button>`).join("");
+  document.querySelectorAll("[data-side]").forEach(c => c.onclick = () => {
+    SHEET_SIDE = c.dataset.side; buzz(8);
+    document.querySelectorAll("[data-side]").forEach(x =>
+      x.classList.toggle("on", x.dataset.side === SHEET_SIDE));
+  });
+  document.querySelectorAll("[data-odds]").forEach(c => c.onclick = () => {
+    $("#betOdds").value = c.dataset.odds; buzz(8);
+  });
+  $("#sheetWrap").classList.add("open"); buzz(10);
+}
+$("#shade").onclick = () => $("#sheetWrap").classList.remove("open");
+$("#stakeUp").onclick = () => { $("#betStake").value = +$("#betStake").value + 25; buzz(8); };
+$("#stakeDown").onclick = () => { $("#betStake").value = Math.max(25, +$("#betStake").value - 25); buzz(8); };
+$("#confirmBet").onclick = () => {
+  const odds = +$("#betOdds").value, stake = +$("#betStake").value;
+  if (!odds || !stake || !SHEET_GAME) { buzz([30, 40, 30]); return; }
+  const ledger = loadLedger();
+  ledger.push({ date: BOARD.date, game_pk: SHEET_GAME.game_pk,
+    matchup: `${SHEET_GAME.away} @ ${SHEET_GAME.home}`, side: SHEET_SIDE,
+    odds, stake, placed_at: new Date().toISOString() });
+  saveLedger(ledger);
+  $("#sheetWrap").classList.remove("open"); $("#betOdds").value = "";
+  buzz([12, 40, 12]); renderLedger();
+  document.querySelector('[data-view="bets"]').click();
+};
+
+/* ---------- ledger ---------- */
+function settle(bet) {
+  const s = LIVE[bet.game_pk];
+  if (!s || s.state !== "Final") return bet;
+  if (/Postponed|Cancelled|Suspended/.test(s.detail)) { bet.result = "void"; bet.pnl = 0; return bet; }
+  if (s.awayScore == null || s.homeScore == null || s.awayScore === s.homeScore) return bet;
+  const winner = s.homeScore > s.awayScore ? s.homeName : s.awayName;
+  const won = winner === bet.side;
+  bet.result = won ? "win" : "loss";
+  bet.pnl = won ? (bet.odds > 0 ? bet.stake * bet.odds / 100 : bet.stake * 100 / -bet.odds) : -bet.stake;
+  bet.pnl = Math.round(bet.pnl * 100) / 100;
+  return bet;
+}
+function renderLedger() {
+  let ledger = loadLedger().map(settle);
+  saveLedger(ledger);
+  let pnl = 0, w = 0, l = 0, staked = 0;
+  const cards = $("#betCards"); cards.innerHTML = "";
+  ledger.slice().reverse().forEach((b) => {
+    const i = ledger.indexOf(b);
+    if (b.result === "win") w++; else if (b.result === "loss") l++;
+    if (b.pnl != null) pnl += b.pnl;
+    if (b.result && b.result !== "void") staked += b.stake;
+    const res = b.result || "pending";
+    cards.insertAdjacentHTML("beforeend",
+      `<div class="card betcard"><div class="row">
+         <div class="grow"><div class="matchup">${esc(b.side)}</div>
+           <div class="sub">${esc(b.matchup)} - ${esc(b.date)}</div>
+           <div class="sub">${b.odds > 0 ? "+" : ""}${b.odds} - $${b.stake}</div></div>
+         <div style="text-align:right">
+           <div class="${res === "win" ? "pos" : res === "loss" ? "neg" : "dim"}" style="font-weight:700">${res.toUpperCase()}</div>
+           <div class="${(b.pnl || 0) >= 0 ? "pos" : "neg"}">${b.pnl == null ? "" : "$" + b.pnl.toFixed(2)}</div>
+           <button class="delete" data-del="${i}">remove</button></div></div></div>`);
+  });
+  if (!ledger.length) cards.innerHTML = '<div class="card dim">No bets yet - tap BET on the board.</div>';
+  document.querySelectorAll("[data-del]").forEach(b => b.onclick = () => {
+    const lg = loadLedger(); lg.splice(+b.dataset.del, 1); saveLedger(lg);
+    buzz(15); renderLedger();
+  });
+  const roi = staked ? (pnl / staked * 100).toFixed(1) : "0.0";
+  $("#ledgerStats").innerHTML =
+    `<div class="stat"><b class="${pnl >= 0 ? "pos" : "neg"}">$${pnl.toFixed(0)}</b><span>P&amp;L</span></div>` +
+    `<div class="stat"><b>${w}-${l}</b><span>record</span></div>` +
+    `<div class="stat"><b class="${pnl >= 0 ? "pos" : "neg"}">${roi}%</b><span>ROI</span></div>` +
+    `<div class="stat"><b>${ledger.filter(b => !b.result).length}</b><span>pending</span></div>`;
+}
+$("#exportCsv").onclick = () => {
+  const rows = [["date","matchup","side","odds","stake","result","pnl"]];
+  for (const b of loadLedger())
+    rows.push([b.date, b.matchup, b.side, b.odds, b.stake, b.result || "pending", b.pnl ?? ""]);
+  const csv = rows.map(r => r.map(v => `"${String(v).replace(/"/g, '""')}"`).join(",")).join("\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([csv], {type:"text/csv"}));
+  a.download = "mlbedge_ledger.csv"; a.click();
+};
+
+/* ---------- refresh loop ---------- */
+async function refresh() {
+  const dates = new Set([BOARD?.date].filter(Boolean));
+  for (const b of loadLedger()) if (!b.result) dates.add(b.date);
+  await fetchLive([...dates]);
+  if (BOARD) renderBoard();
+  renderLedger();
+}
+$("#refreshBtn").onclick = async () => {
+  buzz(8); await fetchBoard(); await fetchRecord(); await refresh();
+};
+
+(async () => {
+  if ("serviceWorker" in navigator) {
+    try { await navigator.serviceWorker.register("sw.js"); } catch (e) {}
+  }
+  await fetchBoard();
+  await fetchRecord();
+  await refresh();
+  setInterval(refresh, 60000);
+})();
+</script>
+</body>
+</html>
