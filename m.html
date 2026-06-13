@@ -34,6 +34,11 @@
   h2 { font-size:13px; margin:16px 2px 8px; color:var(--blue);
        text-transform:uppercase; letter-spacing:.6px; }
   .view { display:none; } .view.active { display:block; }
+  .seg { display:flex; gap:6px; background:var(--panel); border:1px solid var(--line);
+         border-radius:12px; padding:4px; margin:10px 0 4px; }
+  .seg button { flex:1; background:none; border:none; color:var(--dim);
+                border-radius:9px; padding:10px; font-size:13.5px; font-weight:700; }
+  .seg button.on { background:var(--panel2); color:var(--gold); }
   /* cards */
   .card { background:var(--panel); border:1px solid var(--line); border-radius:14px;
           padding:12px 14px; margin-bottom:10px; }
@@ -117,10 +122,25 @@
 
 <!-- BOARD -->
 <section class="view active" id="view-board">
-  <h2>Edge Picks</h2>
-  <div id="edgeCards"><div class="card dim">loading...</div></div>
-  <h2>Full Board</h2>
-  <div id="gameCards"></div>
+  <div class="seg" id="boardSeg">
+    <button data-mode="past">Past</button>
+    <button data-mode="today" class="on">Today</button>
+    <button data-mode="future">Upcoming</button>
+  </div>
+  <div id="mode-today">
+    <h2>Edge Picks</h2>
+    <div id="edgeCards"><div class="card dim">loading...</div></div>
+    <h2>Full Board</h2>
+    <div id="gameCards"></div>
+  </div>
+  <div id="mode-past" style="display:none">
+    <h2>Past Edge Results</h2>
+    <div id="historyFeed"><div class="card dim">loading...</div></div>
+  </div>
+  <div id="mode-future" style="display:none">
+    <h2>Upcoming Edges <span class="dim" style="font-weight:400">probables-gated</span></h2>
+    <div id="futureFeed"><div class="card dim">loading...</div></div>
+  </div>
 </section>
 
 <!-- BETS -->
@@ -293,6 +313,61 @@ function renderBoard() {
     edge.innerHTML = '<div class="card dim">No game clears the confidence floor today - no forced picks, by design.</div>';
   document.querySelectorAll("[data-bet]").forEach(b =>
     b.onclick = () => openSheet(+b.dataset.bet));
+}
+
+/* ---------- board time segment (Past / Today / Upcoming) ---------- */
+let histLoaded = false, futLoaded = false;
+document.querySelectorAll("#boardSeg button").forEach(b => b.onclick = async () => {
+  buzz(8);
+  const mode = b.dataset.mode;
+  document.querySelectorAll("#boardSeg button").forEach(x => x.classList.toggle("on", x === b));
+  document.querySelector("#mode-today").style.display = mode === "today" ? "" : "none";
+  document.querySelector("#mode-past").style.display = mode === "past" ? "" : "none";
+  document.querySelector("#mode-future").style.display = mode === "future" ? "" : "none";
+  if (mode === "past" && !histLoaded) { histLoaded = true; await fetchHistory(); }
+  if (mode === "future" && !futLoaded) { futLoaded = true; await fetchFuture(); }
+});
+async function fetchHistory() {
+  try {
+    const r = await fetch("data/history.json", {cache:"no-store"});
+    if (r.ok) renderHistory(await r.json());
+  } catch (e) {}
+}
+function renderHistory(d) {
+  document.querySelector("#historyFeed").innerHTML = (d.days || []).map(day => {
+    const rows = day.picks.map(p => {
+      const res = p.outcome || "pending";
+      const cls = res === "win" ? "pos" : res === "loss" ? "neg" : "dim";
+      return `<div class="listrow"><span class="grow"><b>${esc(p.team)}</b> ` +
+        `<span class="dim">${(p.confidence*100).toFixed(1)}%</span>` +
+        `<div class="sub">${esc(p.matchup)}${p.score ? " — " + esc(p.score) : ""}</div></span>` +
+        `<span class="${cls}" style="font-weight:700">${res.toUpperCase()}</span></div>`;
+    }).join("");
+    const v = day.edge_v ? ` <span class="dim">${day.edge_v}V</span>` : "";
+    return `<div class="card"><div class="row"><div class="grow matchup">${esc(day.date)}</div>` +
+      `<span class="dim">edge <b class="${day.edge_w >= day.edge_l ? "pos" : "neg"}">${day.edge_w}-${day.edge_l}</b>${v}</span></div>${rows}</div>`;
+  }).join("") || '<div class="card dim">no graded edges yet</div>';
+}
+async function fetchFuture() {
+  try {
+    const r = await fetch("data/future.json", {cache:"no-store"});
+    if (r.ok) renderFuture(await r.json());
+  } catch (e) {}
+}
+function renderFuture(d) {
+  const note = d.note ? `<div class="meta">${esc(d.note)}</div>` : "";
+  document.querySelector("#futureFeed").innerHTML = note + (d.days || []).map(day => {
+    const rows = day.picks.length ? day.picks.map(p =>
+      `<div class="listrow"><span class="grow"><b>${esc(p.team)}</b> ` +
+      `<span class="dim">${(p.confidence*100).toFixed(1)}%</span>` +
+      `<div class="sub">${esc(p.matchup)}</div>` +
+      `<div class="sub">${esc(p.away_starter || "TBD")} v ${esc(p.home_starter || "TBD")}</div></span></div>`
+    ).join("") : '<div class="sub dim">No confirmed edges yet.</div>';
+    const aw = day.awaiting_probables
+      ? `<div class="sub dim">${day.awaiting_probables} game(s) awaiting probables</div>` : "";
+    return `<div class="card"><div class="row"><div class="grow matchup">${esc(day.date)}</div>` +
+      `<span class="dim">${day.picks.length} edge${day.picks.length === 1 ? "" : "s"}</span></div>${rows}${aw}</div>`;
+  }).join("");
 }
 
 /* ---------- bet sheet ---------- */

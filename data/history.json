@@ -1,0 +1,1325 @@
+{
+ "updated": "2026-06-13T13:10:56+00:00",
+ "days": [
+  {
+   "date": "2026-06-13",
+   "edge_w": 0,
+   "edge_l": 0,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Milwaukee Brewers",
+     "matchup": "Philadelphia Phillies @ Milwaukee Brewers",
+     "confidence": 0.6234,
+     "p_home": 0.6234,
+     "outcome": "pending",
+     "score": null
+    },
+    {
+     "team": "Los Angeles Dodgers",
+     "matchup": "Los Angeles Dodgers @ Chicago White Sox",
+     "confidence": 0.6107,
+     "p_home": 0.3893,
+     "outcome": "pending",
+     "score": null
+    },
+    {
+     "team": "Athletics",
+     "matchup": "Colorado Rockies @ Athletics",
+     "confidence": 0.6076,
+     "p_home": 0.6076,
+     "outcome": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "date": "2026-06-12",
+   "edge_w": 1,
+   "edge_l": 0,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Milwaukee Brewers",
+     "matchup": "Philadelphia Phillies @ Milwaukee Brewers",
+     "confidence": 0.6155,
+     "p_home": 0.6155,
+     "outcome": "win",
+     "score": "PHI 0-6 MIL"
+    }
+   ]
+  },
+  {
+   "date": "2026-06-11",
+   "edge_w": 1,
+   "edge_l": 0,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Chicago Cubs",
+     "matchup": "Chicago Cubs @ Colorado Rockies",
+     "confidence": 0.5858,
+     "p_home": 0.4142,
+     "outcome": "win",
+     "score": "CHI 9-3 COL"
+    }
+   ]
+  },
+  {
+   "date": "2026-06-10",
+   "edge_w": 1,
+   "edge_l": 0,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "San Diego Padres",
+     "matchup": "Cincinnati Reds @ San Diego Padres",
+     "confidence": 0.5778,
+     "p_home": 0.5778,
+     "outcome": "win",
+     "score": "CIN 4-5 SAN"
+    }
+   ]
+  },
+  {
+   "date": "2026-06-08",
+   "edge_w": 1,
+   "edge_l": 0,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Milwaukee Brewers",
+     "matchup": "Milwaukee Brewers @ Athletics",
+     "confidence": 0.6077,
+     "p_home": 0.3923,
+     "outcome": "win",
+     "score": "MIL 15-14 ATH"
+    }
+   ]
+  },
+  {
+   "date": "2026-06-07",
+   "edge_w": 3,
+   "edge_l": 1,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Los Angeles Dodgers",
+     "matchup": "Los Angeles Angels @ Los Angeles Dodgers",
+     "confidence": 0.6762,
+     "p_home": 0.6762,
+     "outcome": "loss",
+     "score": "LOS 13-5 LOS"
+    },
+    {
+     "team": "New York Yankees",
+     "matchup": "Boston Red Sox @ New York Yankees",
+     "confidence": 0.6062,
+     "p_home": 0.6062,
+     "outcome": "win",
+     "score": "BOS 1-6 NEW"
+    },
+    {
+     "team": "Milwaukee Brewers",
+     "matchup": "Milwaukee Brewers @ Colorado Rockies",
+     "confidence": 0.601,
+     "p_home": 0.399,
+     "outcome": "win",
+     "score": "MIL 12-4 COL"
+    },
+    {
+     "team": "Atlanta Braves",
+     "matchup": "Pittsburgh Pirates @ Atlanta Braves",
+     "confidence": 0.5972,
+     "p_home": 0.5972,
+     "outcome": "win",
+     "score": "PIT 2-3 ATL"
+    }
+   ]
+  },
+  {
+   "date": "2026-06-06",
+   "edge_w": 3,
+   "edge_l": 0,
+   "edge_v": 1,
+   "picks": [
+    {
+     "team": "Los Angeles Dodgers",
+     "matchup": "Los Angeles Angels @ Los Angeles Dodgers",
+     "confidence": 0.6693,
+     "p_home": 0.6693,
+     "outcome": "win",
+     "score": "LOS 2-9 LOS"
+    },
+    {
+     "team": "New York Yankees",
+     "matchup": "Boston Red Sox @ New York Yankees",
+     "confidence": 0.6205,
+     "p_home": 0.6205,
+     "outcome": "void",
+     "score": null
+    },
+    {
+     "team": "Milwaukee Brewers",
+     "matchup": "Milwaukee Brewers @ Colorado Rockies",
+     "confidence": 0.594,
+     "p_home": 0.406,
+     "outcome": "win",
+     "score": "MIL 7-1 COL"
+    },
+    {
+     "team": "Atlanta Braves",
+     "matchup": "Pittsburgh Pirates @ Atlanta Braves",
+     "confidence": 0.5937,
+     "p_home": 0.5937,
+     "outcome": "win",
+     "score": "PIT 3-6 ATL"
+    }
+   ]
+  },
+  {
+   "date": "2026-06-05",
+   "edge_w": 3,
+   "edge_l": 1,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Los Angeles Dodgers",
+     "matchup": "Los Angeles Angels @ Los Angeles Dodgers",
+     "confidence": 0.6676,
+     "p_home": 0.6676,
+     "outcome": "win",
+     "score": "LOS 0-1 LOS"
+    },
+    {
+     "team": "New York Yankees",
+     "matchup": "Boston Red Sox @ New York Yankees",
+     "confidence": 0.6103,
+     "p_home": 0.6103,
+     "outcome": "loss",
+     "score": "BOS 5-3 NEW"
+    },
+    {
+     "team": "Milwaukee Brewers",
+     "matchup": "Milwaukee Brewers @ Colorado Rockies",
+     "confidence": 0.594,
+     "p_home": 0.406,
+     "outcome": "win",
+     "score": "MIL 9-7 COL"
+    },
+    {
+     "team": "Atlanta Braves",
+     "matchup": "Pittsburgh Pirates @ Atlanta Braves",
+     "confidence": 0.5901,
+     "p_home": 0.5901,
+     "outcome": "win",
+     "score": "PIT 3-6 ATL"
+    }
+   ]
+  },
+  {
+   "date": "2026-06-04",
+   "edge_w": 1,
+   "edge_l": 2,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Milwaukee Brewers",
+     "matchup": "San Francisco Giants @ Milwaukee Brewers",
+     "confidence": 0.6581,
+     "p_home": 0.6581,
+     "outcome": "loss",
+     "score": "SAN 12-9 MIL"
+    },
+    {
+     "team": "Atlanta Braves",
+     "matchup": "Toronto Blue Jays @ Atlanta Braves",
+     "confidence": 0.6292,
+     "p_home": 0.6292,
+     "outcome": "loss",
+     "score": "TOR 7-2 ATL"
+    },
+    {
+     "team": "New York Yankees",
+     "matchup": "Cleveland Guardians @ New York Yankees",
+     "confidence": 0.5985,
+     "p_home": 0.5985,
+     "outcome": "win",
+     "score": "CLE 1-2 NEW"
+    }
+   ]
+  },
+  {
+   "date": "2026-06-03",
+   "edge_w": 1,
+   "edge_l": 3,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Milwaukee Brewers",
+     "matchup": "San Francisco Giants @ Milwaukee Brewers",
+     "confidence": 0.6595,
+     "p_home": 0.6595,
+     "outcome": "loss",
+     "score": "SAN 1-0 MIL"
+    },
+    {
+     "team": "Atlanta Braves",
+     "matchup": "Toronto Blue Jays @ Atlanta Braves",
+     "confidence": 0.6244,
+     "p_home": 0.6244,
+     "outcome": "win",
+     "score": "TOR 3-7 ATL"
+    },
+    {
+     "team": "New York Yankees",
+     "matchup": "Cleveland Guardians @ New York Yankees",
+     "confidence": 0.6102,
+     "p_home": 0.6102,
+     "outcome": "loss",
+     "score": "CLE 5-4 NEW"
+    },
+    {
+     "team": "Chicago Cubs",
+     "matchup": "Athletics @ Chicago Cubs",
+     "confidence": 0.5866,
+     "p_home": 0.5866,
+     "outcome": "loss",
+     "score": "ATH 5-4 CHI"
+    }
+   ]
+  },
+  {
+   "date": "2026-06-02",
+   "edge_w": 2,
+   "edge_l": 2,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Milwaukee Brewers",
+     "matchup": "San Francisco Giants @ Milwaukee Brewers",
+     "confidence": 0.6542,
+     "p_home": 0.6542,
+     "outcome": "win",
+     "score": "SAN 3-8 MIL"
+    },
+    {
+     "team": "Atlanta Braves",
+     "matchup": "Toronto Blue Jays @ Atlanta Braves",
+     "confidence": 0.6112,
+     "p_home": 0.6112,
+     "outcome": "win",
+     "score": "TOR 3-4 ATL"
+    },
+    {
+     "team": "New York Yankees",
+     "matchup": "Cleveland Guardians @ New York Yankees",
+     "confidence": 0.6103,
+     "p_home": 0.6103,
+     "outcome": "loss",
+     "score": "CLE 9-4 NEW"
+    },
+    {
+     "team": "Tampa Bay Rays",
+     "matchup": "Detroit Tigers @ Tampa Bay Rays",
+     "confidence": 0.5855,
+     "p_home": 0.5855,
+     "outcome": "loss",
+     "score": "DET 8-0 TAM"
+    }
+   ]
+  },
+  {
+   "date": "2026-06-01",
+   "edge_w": 1,
+   "edge_l": 1,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Milwaukee Brewers",
+     "matchup": "San Francisco Giants @ Milwaukee Brewers",
+     "confidence": 0.6365,
+     "p_home": 0.6365,
+     "outcome": "win",
+     "score": "SAN 2-16 MIL"
+    },
+    {
+     "team": "Tampa Bay Rays",
+     "matchup": "Detroit Tigers @ Tampa Bay Rays",
+     "confidence": 0.5893,
+     "p_home": 0.5893,
+     "outcome": "loss",
+     "score": "DET 10-9 TAM"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-31",
+   "edge_w": 3,
+   "edge_l": 1,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Los Angeles Dodgers",
+     "matchup": "Philadelphia Phillies @ Los Angeles Dodgers",
+     "confidence": 0.6454,
+     "p_home": 0.6454,
+     "outcome": "win",
+     "score": "PHI 1-9 LOS"
+    },
+    {
+     "team": "Atlanta Braves",
+     "matchup": "Atlanta Braves @ Cincinnati Reds",
+     "confidence": 0.6284,
+     "p_home": 0.3716,
+     "outcome": "loss",
+     "score": "ATL 4-6 CIN"
+    },
+    {
+     "team": "Texas Rangers",
+     "matchup": "Kansas City Royals @ Texas Rangers",
+     "confidence": 0.5849,
+     "p_home": 0.5849,
+     "outcome": "win",
+     "score": "KAN 3-6 TEX"
+    },
+    {
+     "team": "Tampa Bay Rays",
+     "matchup": "Los Angeles Angels @ Tampa Bay Rays",
+     "confidence": 0.5832,
+     "p_home": 0.5832,
+     "outcome": "win",
+     "score": "LOS 2-5 TAM"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-30",
+   "edge_w": 1,
+   "edge_l": 2,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Los Angeles Dodgers",
+     "matchup": "Philadelphia Phillies @ Los Angeles Dodgers",
+     "confidence": 0.6481,
+     "p_home": 0.6481,
+     "outcome": "loss",
+     "score": "PHI 4-3 LOS"
+    },
+    {
+     "team": "Tampa Bay Rays",
+     "matchup": "Los Angeles Angels @ Tampa Bay Rays",
+     "confidence": 0.6021,
+     "p_home": 0.6021,
+     "outcome": "loss",
+     "score": "LOS 14-3 TAM"
+    },
+    {
+     "team": "Atlanta Braves",
+     "matchup": "Atlanta Braves @ Cincinnati Reds",
+     "confidence": 0.5775,
+     "p_home": 0.4225,
+     "outcome": "win",
+     "score": "ATL 5-2 CIN"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-29",
+   "edge_w": 2,
+   "edge_l": 0,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Los Angeles Dodgers",
+     "matchup": "Philadelphia Phillies @ Los Angeles Dodgers",
+     "confidence": 0.6457,
+     "p_home": 0.6457,
+     "outcome": "win",
+     "score": "PHI 2-4 LOS"
+    },
+    {
+     "team": "Tampa Bay Rays",
+     "matchup": "Los Angeles Angels @ Tampa Bay Rays",
+     "confidence": 0.5984,
+     "p_home": 0.5984,
+     "outcome": "win",
+     "score": "LOS 5-8 TAM"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-28",
+   "edge_w": 0,
+   "edge_l": 3,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Detroit Tigers",
+     "matchup": "Los Angeles Angels @ Detroit Tigers",
+     "confidence": 0.6158,
+     "p_home": 0.6158,
+     "outcome": "loss",
+     "score": "LOS 7-1 DET"
+    },
+    {
+     "team": "Texas Rangers",
+     "matchup": "Houston Astros @ Texas Rangers",
+     "confidence": 0.5767,
+     "p_home": 0.5767,
+     "outcome": "loss",
+     "score": "HOU 5-1 TEX"
+    },
+    {
+     "team": "Pittsburgh Pirates",
+     "matchup": "Chicago Cubs @ Pittsburgh Pirates",
+     "confidence": 0.5765,
+     "p_home": 0.5765,
+     "outcome": "loss",
+     "score": "CHI 7-2 PIT"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-27",
+   "edge_w": 2,
+   "edge_l": 0,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Los Angeles Dodgers",
+     "matchup": "Colorado Rockies @ Los Angeles Dodgers",
+     "confidence": 0.6825,
+     "p_home": 0.6825,
+     "outcome": "win",
+     "score": "COL 1-4 LOS"
+    },
+    {
+     "team": "Milwaukee Brewers",
+     "matchup": "St. Louis Cardinals @ Milwaukee Brewers",
+     "confidence": 0.6071,
+     "p_home": 0.6071,
+     "outcome": "win",
+     "score": "ST. 1-2 MIL"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-26",
+   "edge_w": 3,
+   "edge_l": 0,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Los Angeles Dodgers",
+     "matchup": "Colorado Rockies @ Los Angeles Dodgers",
+     "confidence": 0.675,
+     "p_home": 0.675,
+     "outcome": "win",
+     "score": "COL 6-15 LOS"
+    },
+    {
+     "team": "Milwaukee Brewers",
+     "matchup": "St. Louis Cardinals @ Milwaukee Brewers",
+     "confidence": 0.6433,
+     "p_home": 0.6433,
+     "outcome": "win",
+     "score": "ST. 0-6 MIL"
+    },
+    {
+     "team": "Atlanta Braves",
+     "matchup": "Atlanta Braves @ Boston Red Sox",
+     "confidence": 0.6034,
+     "p_home": 0.3966,
+     "outcome": "win",
+     "score": "ATL 7-6 BOS"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-25",
+   "edge_w": 2,
+   "edge_l": 1,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Los Angeles Dodgers",
+     "matchup": "Colorado Rockies @ Los Angeles Dodgers",
+     "confidence": 0.6734,
+     "p_home": 0.6734,
+     "outcome": "win",
+     "score": "COL 3-5 LOS"
+    },
+    {
+     "team": "Milwaukee Brewers",
+     "matchup": "St. Louis Cardinals @ Milwaukee Brewers",
+     "confidence": 0.5905,
+     "p_home": 0.5905,
+     "outcome": "win",
+     "score": "ST. 1-5 MIL"
+    },
+    {
+     "team": "Texas Rangers",
+     "matchup": "Houston Astros @ Texas Rangers",
+     "confidence": 0.5776,
+     "p_home": 0.5776,
+     "outcome": "loss",
+     "score": "HOU 9-0 TEX"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-24",
+   "edge_w": 1,
+   "edge_l": 3,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Atlanta Braves",
+     "matchup": "Washington Nationals @ Atlanta Braves",
+     "confidence": 0.6307,
+     "p_home": 0.6307,
+     "outcome": "loss",
+     "score": "WAS 2-1 ATL"
+    },
+    {
+     "team": "San Diego Padres",
+     "matchup": "Athletics @ San Diego Padres",
+     "confidence": 0.5974,
+     "p_home": 0.5974,
+     "outcome": "loss",
+     "score": "ATH 5-2 SAN"
+    },
+    {
+     "team": "Chicago Cubs",
+     "matchup": "Houston Astros @ Chicago Cubs",
+     "confidence": 0.5939,
+     "p_home": 0.5939,
+     "outcome": "loss",
+     "score": "HOU 8-5 CHI"
+    },
+    {
+     "team": "Arizona Diamondbacks",
+     "matchup": "Colorado Rockies @ Arizona Diamondbacks",
+     "confidence": 0.5818,
+     "p_home": 0.5818,
+     "outcome": "win",
+     "score": "COL 1-9 ARI"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-23",
+   "edge_w": 1,
+   "edge_l": 2,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Atlanta Braves",
+     "matchup": "Washington Nationals @ Atlanta Braves",
+     "confidence": 0.6336,
+     "p_home": 0.6336,
+     "outcome": "loss",
+     "score": "WAS 2-0 ATL"
+    },
+    {
+     "team": "Arizona Diamondbacks",
+     "matchup": "Colorado Rockies @ Arizona Diamondbacks",
+     "confidence": 0.6192,
+     "p_home": 0.6192,
+     "outcome": "win",
+     "score": "COL 4-5 ARI"
+    },
+    {
+     "team": "Chicago Cubs",
+     "matchup": "Houston Astros @ Chicago Cubs",
+     "confidence": 0.599,
+     "p_home": 0.599,
+     "outcome": "loss",
+     "score": "HOU 3-0 CHI"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-22",
+   "edge_w": 1,
+   "edge_l": 3,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Atlanta Braves",
+     "matchup": "Washington Nationals @ Atlanta Braves",
+     "confidence": 0.6333,
+     "p_home": 0.6333,
+     "outcome": "win",
+     "score": "WAS 4-5 ATL"
+    },
+    {
+     "team": "Chicago Cubs",
+     "matchup": "Houston Astros @ Chicago Cubs",
+     "confidence": 0.6034,
+     "p_home": 0.6034,
+     "outcome": "loss",
+     "score": "HOU 4-2 CHI"
+    },
+    {
+     "team": "New York Yankees",
+     "matchup": "Tampa Bay Rays @ New York Yankees",
+     "confidence": 0.598,
+     "p_home": 0.598,
+     "outcome": "loss",
+     "score": "TAM 4-2 NEW"
+    },
+    {
+     "team": "Arizona Diamondbacks",
+     "matchup": "Colorado Rockies @ Arizona Diamondbacks",
+     "confidence": 0.5798,
+     "p_home": 0.5798,
+     "outcome": "loss",
+     "score": "COL 3-2 ARI"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-21",
+   "edge_w": 2,
+   "edge_l": 1,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "New York Yankees",
+     "matchup": "Toronto Blue Jays @ New York Yankees",
+     "confidence": 0.6077,
+     "p_home": 0.6077,
+     "outcome": "loss",
+     "score": "TOR 2-0 NEW"
+    },
+    {
+     "team": "Atlanta Braves",
+     "matchup": "Atlanta Braves @ Miami Marlins",
+     "confidence": 0.587,
+     "p_home": 0.413,
+     "outcome": "win",
+     "score": "ATL 9-3 MIA"
+    },
+    {
+     "team": "Arizona Diamondbacks",
+     "matchup": "Colorado Rockies @ Arizona Diamondbacks",
+     "confidence": 0.5779,
+     "p_home": 0.5779,
+     "outcome": "win",
+     "score": "COL 1-2 ARI"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-20",
+   "edge_w": 3,
+   "edge_l": 1,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Tampa Bay Rays",
+     "matchup": "Baltimore Orioles @ Tampa Bay Rays",
+     "confidence": 0.6162,
+     "p_home": 0.6162,
+     "outcome": "win",
+     "score": "BAL 3-5 TAM"
+    },
+    {
+     "team": "Seattle Mariners",
+     "matchup": "Chicago White Sox @ Seattle Mariners",
+     "confidence": 0.6142,
+     "p_home": 0.6142,
+     "outcome": "win",
+     "score": "CHI 4-5 SEA"
+    },
+    {
+     "team": "New York Yankees",
+     "matchup": "Toronto Blue Jays @ New York Yankees",
+     "confidence": 0.6098,
+     "p_home": 0.6098,
+     "outcome": "loss",
+     "score": "TOR 2-1 NEW"
+    },
+    {
+     "team": "Arizona Diamondbacks",
+     "matchup": "San Francisco Giants @ Arizona Diamondbacks",
+     "confidence": 0.5886,
+     "p_home": 0.5886,
+     "outcome": "win",
+     "score": "SAN 3-6 ARI"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-19",
+   "edge_w": 3,
+   "edge_l": 1,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "New York Yankees",
+     "matchup": "Toronto Blue Jays @ New York Yankees",
+     "confidence": 0.6173,
+     "p_home": 0.6173,
+     "outcome": "win",
+     "score": "TOR 4-5 NEW"
+    },
+    {
+     "team": "Tampa Bay Rays",
+     "matchup": "Baltimore Orioles @ Tampa Bay Rays",
+     "confidence": 0.6115,
+     "p_home": 0.6115,
+     "outcome": "win",
+     "score": "BAL 1-4 TAM"
+    },
+    {
+     "team": "Arizona Diamondbacks",
+     "matchup": "San Francisco Giants @ Arizona Diamondbacks",
+     "confidence": 0.5759,
+     "p_home": 0.5759,
+     "outcome": "win",
+     "score": "SAN 3-5 ARI"
+    },
+    {
+     "team": "Minnesota Twins",
+     "matchup": "Houston Astros @ Minnesota Twins",
+     "confidence": 0.5756,
+     "p_home": 0.5756,
+     "outcome": "loss",
+     "score": "HOU 2-1 MIN"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-18",
+   "edge_w": 3,
+   "edge_l": 0,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Tampa Bay Rays",
+     "matchup": "Baltimore Orioles @ Tampa Bay Rays",
+     "confidence": 0.6261,
+     "p_home": 0.6261,
+     "outcome": "win",
+     "score": "BAL 6-16 TAM"
+    },
+    {
+     "team": "New York Yankees",
+     "matchup": "Toronto Blue Jays @ New York Yankees",
+     "confidence": 0.6086,
+     "p_home": 0.6086,
+     "outcome": "win",
+     "score": "TOR 6-7 NEW"
+    },
+    {
+     "team": "Arizona Diamondbacks",
+     "matchup": "San Francisco Giants @ Arizona Diamondbacks",
+     "confidence": 0.5778,
+     "p_home": 0.5778,
+     "outcome": "win",
+     "score": "SAN 2-12 ARI"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-17",
+   "edge_w": 3,
+   "edge_l": 1,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Atlanta Braves",
+     "matchup": "Boston Red Sox @ Atlanta Braves",
+     "confidence": 0.6338,
+     "p_home": 0.6338,
+     "outcome": "win",
+     "score": "BOS 1-8 ATL"
+    },
+    {
+     "team": "Los Angeles Dodgers",
+     "matchup": "Los Angeles Dodgers @ Los Angeles Angels",
+     "confidence": 0.5961,
+     "p_home": 0.4039,
+     "outcome": "win",
+     "score": "LOS 10-1 LOS"
+    },
+    {
+     "team": "Cleveland Guardians",
+     "matchup": "Cincinnati Reds @ Cleveland Guardians",
+     "confidence": 0.5911,
+     "p_home": 0.5911,
+     "outcome": "win",
+     "score": "CIN 3-10 CLE"
+    },
+    {
+     "team": "Pittsburgh Pirates",
+     "matchup": "Philadelphia Phillies @ Pittsburgh Pirates",
+     "confidence": 0.5802,
+     "p_home": 0.5802,
+     "outcome": "loss",
+     "score": "PHI 6-0 PIT"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-16",
+   "edge_w": 0,
+   "edge_l": 4,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Atlanta Braves",
+     "matchup": "Boston Red Sox @ Atlanta Braves",
+     "confidence": 0.6365,
+     "p_home": 0.6365,
+     "outcome": "loss",
+     "score": "BOS 3-2 ATL"
+    },
+    {
+     "team": "Seattle Mariners",
+     "matchup": "San Diego Padres @ Seattle Mariners",
+     "confidence": 0.5895,
+     "p_home": 0.5895,
+     "outcome": "loss",
+     "score": "SAN 7-4 SEA"
+    },
+    {
+     "team": "Pittsburgh Pirates",
+     "matchup": "Philadelphia Phillies @ Pittsburgh Pirates",
+     "confidence": 0.5883,
+     "p_home": 0.5883,
+     "outcome": "loss",
+     "score": "PHI 6-0 PIT"
+    },
+    {
+     "team": "Athletics",
+     "matchup": "San Francisco Giants @ Athletics",
+     "confidence": 0.5852,
+     "p_home": 0.5852,
+     "outcome": "loss",
+     "score": "SAN 6-4 ATH"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-15",
+   "edge_w": 1,
+   "edge_l": 2,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Atlanta Braves",
+     "matchup": "Boston Red Sox @ Atlanta Braves",
+     "confidence": 0.6581,
+     "p_home": 0.6581,
+     "outcome": "win",
+     "score": "BOS 2-3 ATL"
+    },
+    {
+     "team": "Pittsburgh Pirates",
+     "matchup": "Philadelphia Phillies @ Pittsburgh Pirates",
+     "confidence": 0.5945,
+     "p_home": 0.5945,
+     "outcome": "loss",
+     "score": "PHI 11-9 PIT"
+    },
+    {
+     "team": "Cleveland Guardians",
+     "matchup": "Cincinnati Reds @ Cleveland Guardians",
+     "confidence": 0.5822,
+     "p_home": 0.5822,
+     "outcome": "loss",
+     "score": "CIN 7-6 CLE"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-14",
+   "edge_w": 3,
+   "edge_l": 1,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Los Angeles Dodgers",
+     "matchup": "San Francisco Giants @ Los Angeles Dodgers",
+     "confidence": 0.6442,
+     "p_home": 0.6442,
+     "outcome": "win",
+     "score": "SAN 2-5 LOS"
+    },
+    {
+     "team": "Pittsburgh Pirates",
+     "matchup": "Colorado Rockies @ Pittsburgh Pirates",
+     "confidence": 0.5891,
+     "p_home": 0.5891,
+     "outcome": "win",
+     "score": "COL 2-7 PIT"
+    },
+    {
+     "team": "Milwaukee Brewers",
+     "matchup": "San Diego Padres @ Milwaukee Brewers",
+     "confidence": 0.5873,
+     "p_home": 0.5873,
+     "outcome": "win",
+     "score": "SAN 1-7 MIL"
+    },
+    {
+     "team": "Atlanta Braves",
+     "matchup": "Chicago Cubs @ Atlanta Braves",
+     "confidence": 0.584,
+     "p_home": 0.584,
+     "outcome": "loss",
+     "score": "CHI 2-0 ATL"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-13",
+   "edge_w": 1,
+   "edge_l": 3,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Los Angeles Dodgers",
+     "matchup": "San Francisco Giants @ Los Angeles Dodgers",
+     "confidence": 0.6365,
+     "p_home": 0.6365,
+     "outcome": "win",
+     "score": "SAN 0-4 LOS"
+    },
+    {
+     "team": "Pittsburgh Pirates",
+     "matchup": "Colorado Rockies @ Pittsburgh Pirates",
+     "confidence": 0.6234,
+     "p_home": 0.6234,
+     "outcome": "loss",
+     "score": "COL 10-4 PIT"
+    },
+    {
+     "team": "New York Yankees",
+     "matchup": "New York Yankees @ Baltimore Orioles",
+     "confidence": 0.6005,
+     "p_home": 0.3995,
+     "outcome": "loss",
+     "score": "NEW 0-7 BAL"
+    },
+    {
+     "team": "Milwaukee Brewers",
+     "matchup": "San Diego Padres @ Milwaukee Brewers",
+     "confidence": 0.5918,
+     "p_home": 0.5918,
+     "outcome": "loss",
+     "score": "SAN 3-1 MIL"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-12",
+   "edge_w": 3,
+   "edge_l": 1,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Pittsburgh Pirates",
+     "matchup": "Colorado Rockies @ Pittsburgh Pirates",
+     "confidence": 0.6493,
+     "p_home": 0.6493,
+     "outcome": "win",
+     "score": "COL 1-3 PIT"
+    },
+    {
+     "team": "Los Angeles Dodgers",
+     "matchup": "San Francisco Giants @ Los Angeles Dodgers",
+     "confidence": 0.6461,
+     "p_home": 0.6461,
+     "outcome": "loss",
+     "score": "SAN 6-2 LOS"
+    },
+    {
+     "team": "New York Yankees",
+     "matchup": "New York Yankees @ Baltimore Orioles",
+     "confidence": 0.6131,
+     "p_home": 0.3869,
+     "outcome": "win",
+     "score": "NEW 6-2 BAL"
+    },
+    {
+     "team": "Milwaukee Brewers",
+     "matchup": "San Diego Padres @ Milwaukee Brewers",
+     "confidence": 0.5885,
+     "p_home": 0.5885,
+     "outcome": "win",
+     "score": "SAN 4-6 MIL"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-11",
+   "edge_w": 0,
+   "edge_l": 2,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Los Angeles Dodgers",
+     "matchup": "San Francisco Giants @ Los Angeles Dodgers",
+     "confidence": 0.6611,
+     "p_home": 0.6611,
+     "outcome": "loss",
+     "score": "SAN 9-3 LOS"
+    },
+    {
+     "team": "New York Yankees",
+     "matchup": "New York Yankees @ Baltimore Orioles",
+     "confidence": 0.5799,
+     "p_home": 0.4201,
+     "outcome": "loss",
+     "score": "NEW 2-3 BAL"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-07",
+   "edge_w": 2,
+   "edge_l": 0,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Chicago Cubs",
+     "matchup": "Cincinnati Reds @ Chicago Cubs",
+     "confidence": 0.6073,
+     "p_home": 0.6073,
+     "outcome": "win",
+     "score": "CIN 3-8 CHI"
+    },
+    {
+     "team": "New York Yankees",
+     "matchup": "Texas Rangers @ New York Yankees",
+     "confidence": 0.598,
+     "p_home": 0.598,
+     "outcome": "win",
+     "score": "TEX 2-9 NEW"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-06",
+   "edge_w": 2,
+   "edge_l": 1,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "New York Yankees",
+     "matchup": "Texas Rangers @ New York Yankees",
+     "confidence": 0.6435,
+     "p_home": 0.6435,
+     "outcome": "loss",
+     "score": "TEX 6-1 NEW"
+    },
+    {
+     "team": "Chicago Cubs",
+     "matchup": "Cincinnati Reds @ Chicago Cubs",
+     "confidence": 0.6152,
+     "p_home": 0.6152,
+     "outcome": "win",
+     "score": "CIN 6-7 CHI"
+    },
+    {
+     "team": "Tampa Bay Rays",
+     "matchup": "Toronto Blue Jays @ Tampa Bay Rays",
+     "confidence": 0.603,
+     "p_home": 0.603,
+     "outcome": "win",
+     "score": "TOR 0-3 TAM"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-05",
+   "edge_w": 2,
+   "edge_l": 1,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "New York Yankees",
+     "matchup": "Texas Rangers @ New York Yankees",
+     "confidence": 0.6191,
+     "p_home": 0.6191,
+     "outcome": "win",
+     "score": "TEX 4-7 NEW"
+    },
+    {
+     "team": "Chicago Cubs",
+     "matchup": "Cincinnati Reds @ Chicago Cubs",
+     "confidence": 0.6058,
+     "p_home": 0.6058,
+     "outcome": "win",
+     "score": "CIN 2-3 CHI"
+    },
+    {
+     "team": "Miami Marlins",
+     "matchup": "Baltimore Orioles @ Miami Marlins",
+     "confidence": 0.5945,
+     "p_home": 0.5945,
+     "outcome": "loss",
+     "score": "BAL 9-7 MIA"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-04",
+   "edge_w": 2,
+   "edge_l": 1,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "New York Yankees",
+     "matchup": "Baltimore Orioles @ New York Yankees",
+     "confidence": 0.6387,
+     "p_home": 0.6387,
+     "outcome": "win",
+     "score": "BAL 1-12 NEW"
+    },
+    {
+     "team": "Chicago Cubs",
+     "matchup": "Cincinnati Reds @ Chicago Cubs",
+     "confidence": 0.6041,
+     "p_home": 0.6041,
+     "outcome": "win",
+     "score": "CIN 4-5 CHI"
+    },
+    {
+     "team": "Miami Marlins",
+     "matchup": "Philadelphia Phillies @ Miami Marlins",
+     "confidence": 0.5815,
+     "p_home": 0.5815,
+     "outcome": "loss",
+     "score": "PHI 1-0 MIA"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-03",
+   "edge_w": 3,
+   "edge_l": 1,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "New York Yankees",
+     "matchup": "Baltimore Orioles @ New York Yankees",
+     "confidence": 0.638,
+     "p_home": 0.638,
+     "outcome": "win",
+     "score": "BAL 3-11 NEW"
+    },
+    {
+     "team": "Atlanta Braves",
+     "matchup": "Atlanta Braves @ Colorado Rockies",
+     "confidence": 0.6298,
+     "p_home": 0.3702,
+     "outcome": "win",
+     "score": "ATL 11-6 COL"
+    },
+    {
+     "team": "Chicago Cubs",
+     "matchup": "Arizona Diamondbacks @ Chicago Cubs",
+     "confidence": 0.6047,
+     "p_home": 0.6047,
+     "outcome": "win",
+     "score": "ARI 4-8 CHI"
+    },
+    {
+     "team": "Miami Marlins",
+     "matchup": "Philadelphia Phillies @ Miami Marlins",
+     "confidence": 0.5941,
+     "p_home": 0.5941,
+     "outcome": "loss",
+     "score": "PHI 7-2 MIA"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-02",
+   "edge_w": 3,
+   "edge_l": 1,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "New York Yankees",
+     "matchup": "Baltimore Orioles @ New York Yankees",
+     "confidence": 0.6173,
+     "p_home": 0.6173,
+     "outcome": "win",
+     "score": "BAL 4-9 NEW"
+    },
+    {
+     "team": "San Diego Padres",
+     "matchup": "Chicago White Sox @ San Diego Padres",
+     "confidence": 0.6154,
+     "p_home": 0.6154,
+     "outcome": "loss",
+     "score": "CHI 4-0 SAN"
+    },
+    {
+     "team": "Chicago Cubs",
+     "matchup": "Arizona Diamondbacks @ Chicago Cubs",
+     "confidence": 0.6,
+     "p_home": 0.6,
+     "outcome": "win",
+     "score": "ARI 0-2 CHI"
+    },
+    {
+     "team": "Miami Marlins",
+     "matchup": "Philadelphia Phillies @ Miami Marlins",
+     "confidence": 0.5847,
+     "p_home": 0.5847,
+     "outcome": "win",
+     "score": "PHI 0-4 MIA"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-01",
+   "edge_w": 3,
+   "edge_l": 1,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "New York Yankees",
+     "matchup": "Baltimore Orioles @ New York Yankees",
+     "confidence": 0.6075,
+     "p_home": 0.6075,
+     "outcome": "win",
+     "score": "BAL 2-7 NEW"
+    },
+    {
+     "team": "Tampa Bay Rays",
+     "matchup": "San Francisco Giants @ Tampa Bay Rays",
+     "confidence": 0.5973,
+     "p_home": 0.5973,
+     "outcome": "win",
+     "score": "SAN 0-3 TAM"
+    },
+    {
+     "team": "Miami Marlins",
+     "matchup": "Philadelphia Phillies @ Miami Marlins",
+     "confidence": 0.5886,
+     "p_home": 0.5886,
+     "outcome": "loss",
+     "score": "PHI 6-5 MIA"
+    },
+    {
+     "team": "Chicago Cubs",
+     "matchup": "Arizona Diamondbacks @ Chicago Cubs",
+     "confidence": 0.5832,
+     "p_home": 0.5832,
+     "outcome": "win",
+     "score": "ARI 5-6 CHI"
+    }
+   ]
+  }
+ ]
+}
