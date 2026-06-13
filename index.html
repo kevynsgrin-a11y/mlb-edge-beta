@@ -64,6 +64,9 @@
 
 <h2>Model Track Record <span class="dim" style="font-weight:400">objective W-L — did the model's side win (no money)</span></h2>
 <div class="stats" id="record"><span class="dim">loading record...</span></div>
+<table id="tierTable" style="margin-top:10px"><thead><tr>
+  <th>Confidence band</th><th>W-L</th><th>Win%</th><th>n</th><th></th>
+</tr></thead><tbody></tbody></table>
 
 <h2>Edge Picks</h2>
 <div class="cards" id="edgeCards"><span class="dim">-</span></div>
@@ -123,6 +126,13 @@ async function fetchRecord() {
       `<div class="stat"><b>${a.w}-${a.l}</b><span>all picks (${(a.pct*100).toFixed(1)}%)</span></div>` +
       `<div class="stat"><b>${a.brier ?? "-"}</b><span>brier (calibration)</span></div>` +
       `<div class="stat"><b>${e.pending}</b><span>edge pending</span></div>`;
+    const tb = $("#tierTable tbody");
+    tb.innerHTML = (d.tiers || []).filter(t => t.n).map(t =>
+      `<tr${t.edge ? ' style="background:var(--pick)"' : ""}>` +
+      `<td>${t.band}${t.edge ? ' <span class="badge" style="color:var(--gold);border-color:var(--gold)">EDGE</span>' : ""}</td>` +
+      `<td>${t.w}-${t.l}</td>` +
+      `<td class="${t.pct >= 0.524 ? "pos" : "neg"}">${(t.pct*100).toFixed(1)}%</td>` +
+      `<td class="dim">${t.n}</td><td></td></tr>`).join("");
   } catch (e) { /* record optional */ }
 }
 

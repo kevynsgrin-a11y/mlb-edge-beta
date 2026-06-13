@@ -136,6 +136,8 @@
   <h2>Model Track Record</h2>
   <div class="meta">Objective W-L - did the model's side win. No money.</div>
   <div class="stats" id="recordStats"></div>
+  <h2>Confidence Tiers</h2>
+  <div class="card" id="tierRows"><span class="dim">loading...</span></div>
   <h2>Recent Slates</h2>
   <div class="card" id="recordRows"><span class="dim">loading...</span></div>
 </section>
@@ -216,6 +218,10 @@ async function fetchRecord() {
       `<div class="stat"><b>${a.w}-${a.l}</b><span>all ${(a.pct*100).toFixed(1)}%</span></div>` +
       `<div class="stat"><b>${a.brier ?? "-"}</b><span>brier</span></div>` +
       `<div class="stat"><b>${e.pending}</b><span>pending</span></div>`;
+    $("#tierRows").innerHTML = (d.tiers || []).filter(t => t.n).map(t =>
+      `<div class="listrow"><span>${esc(t.band)}${t.edge ? ' <span class="badge b-edge">EDGE</span>' : ""}</span>` +
+      `<span><b class="${t.pct >= 0.524 ? "pos" : "neg"}">${(t.pct*100).toFixed(1)}%</b>&nbsp;&nbsp;<span class="dim">${t.w}-${t.l} (n=${t.n})</span></span></div>`
+    ).join("") || '<span class="dim">no graded picks yet</span>';
     $("#recordRows").innerHTML = (d.by_date || []).map(r2 =>
       `<div class="listrow"><span>${esc(r2.date)}</span>` +
       `<span>edge <b>${r2.edge_w}-${r2.edge_l}</b>&nbsp;&nbsp;<span class="dim">all ${r2.all_w}-${r2.all_l}</span></span></div>`
