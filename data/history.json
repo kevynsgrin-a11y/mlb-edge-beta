@@ -1,8 +1,8 @@
 {
- "updated": "2026-06-13T13:10:56+00:00",
+ "updated": "2026-06-14T14:11:04+00:00",
  "days": [
   {
-   "date": "2026-06-13",
+   "date": "2026-06-14",
    "edge_w": 0,
    "edge_l": 0,
    "edge_v": 0,
@@ -10,26 +10,50 @@
     {
      "team": "Milwaukee Brewers",
      "matchup": "Philadelphia Phillies @ Milwaukee Brewers",
-     "confidence": 0.6234,
-     "p_home": 0.6234,
+     "confidence": 0.6199,
+     "p_home": 0.6199,
      "outcome": "pending",
      "score": null
+    },
+    {
+     "team": "New York Yankees",
+     "matchup": "New York Yankees @ Toronto Blue Jays",
+     "confidence": 0.5903,
+     "p_home": 0.4097,
+     "outcome": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "date": "2026-06-13",
+   "edge_w": 2,
+   "edge_l": 1,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Milwaukee Brewers",
+     "matchup": "Philadelphia Phillies @ Milwaukee Brewers",
+     "confidence": 0.6234,
+     "p_home": 0.6234,
+     "outcome": "loss",
+     "score": "PHI 9-8 MIL"
     },
     {
      "team": "Los Angeles Dodgers",
      "matchup": "Los Angeles Dodgers @ Chicago White Sox",
      "confidence": 0.6107,
      "p_home": 0.3893,
-     "outcome": "pending",
-     "score": null
+     "outcome": "win",
+     "score": "LOS 7-1 CHI"
     },
     {
      "team": "Athletics",
      "matchup": "Colorado Rockies @ Athletics",
      "confidence": 0.6076,
      "p_home": 0.6076,
-     "outcome": "pending",
-     "score": null
+     "outcome": "win",
+     "score": "COL 5-7 ATH"
     }
    ]
   },

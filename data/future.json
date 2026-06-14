@@ -1,30 +1,7 @@
 {
- "updated": "2026-06-13T13:10:56+00:00",
+ "updated": "2026-06-14T14:11:05+00:00",
  "note": "Edges shown only when both probable starters are posted; games still awaiting pitchers are counted, never predicted.",
  "days": [
-  {
-   "date": "2026-06-14",
-   "picks": [
-    {
-     "team": "Milwaukee Brewers",
-     "matchup": "Philadelphia Phillies @ Milwaukee Brewers",
-     "confidence": 0.6234,
-     "p_home": 0.6234,
-     "away_starter": "Cristopher S\u00e1nchez",
-     "home_starter": "Kyle Harrison"
-    },
-    {
-     "team": "New York Yankees",
-     "matchup": "New York Yankees @ Toronto Blue Jays",
-     "confidence": 0.5875,
-     "p_home": 0.4125,
-     "away_starter": "Will Warren",
-     "home_starter": "Patrick Corbin"
-    }
-   ],
-   "awaiting_probables": 1,
-   "games": 15
-  },
   {
    "date": "2026-06-15",
    "picks": [],
@@ -36,6 +13,12 @@
    "picks": [],
    "awaiting_probables": 14,
    "games": 15
+  },
+  {
+   "date": "2026-06-17",
+   "picks": [],
+   "awaiting_probables": 13,
+   "games": 14
   }
  ]
 }
