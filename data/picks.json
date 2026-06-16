@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-06-14T14:11:04+00:00",
- "date": "2026-06-14",
+ "generated_at": "2026-06-16T14:50:27+00:00",
+ "date": "2026-06-16",
  "model": {
   "fit_seasons": [
    2024,
@@ -11,333 +11,295 @@
  },
  "games": [
   {
-   "game_pk": 823368,
+   "game_pk": 823451,
    "away": "Miami Marlins",
-   "home": "Pittsburgh Pirates",
-   "venue": "PNC Park",
-   "away_starter": "Max Meyer",
-   "home_starter": "Paul Skenes",
-   "p_home": 0.5449,
-   "pick": "Pittsburgh Pirates",
-   "confidence": 0.5449,
-   "pyth_diff": 0.0187,
-   "form_diff": -0.1248,
-   "srd": 0.0,
-   "home_proj": {
-    "k": 8.4,
-    "er": 1.6,
-    "outs": 18.4
-   }
+   "home": "Philadelphia Phillies",
+   "venue": "Citizens Bank Park",
+   "away_starter": "Tyler Phillips",
+   "home_starter": "Jes\u00fas Luzardo",
+   "p_home": 0.5271,
+   "pick": "Philadelphia Phillies",
+   "confidence": 0.5271,
+   "pyth_diff": -0.0111,
+   "form_diff": 0.0119,
+   "srd": 0.0
   },
   {
-   "game_pk": 824823,
-   "away": "San Diego Padres",
-   "home": "Baltimore Orioles",
-   "venue": "Oriole Park at Camden Yards",
-   "away_starter": "Walker Buehler",
-   "home_starter": "Trevor Rogers",
-   "p_home": 0.5437,
-   "pick": "Baltimore Orioles",
-   "confidence": 0.5437,
-   "pyth_diff": -0.0133,
-   "form_diff": 0.0615,
-   "srd": 0.71,
-   "away_proj": {
-    "k": 4.0,
-    "er": 2.9,
-    "outs": 14.1
-   },
-   "home_proj": {
-    "k": 5.3,
-    "er": 2.9,
-    "outs": 15.7
-   }
-  },
-  {
-   "game_pk": 822722,
-   "away": "Seattle Mariners",
+   "game_pk": 822723,
+   "away": "Kansas City Royals",
    "home": "Washington Nationals",
    "venue": "Nationals Park",
-   "away_starter": "Emerson Hancock",
-   "home_starter": "Miles Mikolas",
-   "p_home": 0.4519,
-   "pick": "Seattle Mariners",
-   "confidence": 0.5481,
-   "pyth_diff": -0.0313,
-   "form_diff": 0.0037,
-   "srd": -2.5,
-   "away_proj": {
-    "k": 4.9,
-    "er": 1.7,
-    "outs": 17.6
-   },
-   "home_proj": {
-    "k": 2.9,
-    "er": 3.2,
-    "outs": 11.7
-   }
+   "away_starter": "Michael Wacha",
+   "home_starter": "Foster Griffin",
+   "p_home": 0.5806,
+   "pick": "Washington Nationals",
+   "confidence": 0.5806,
+   "pyth_diff": 0.0752,
+   "form_diff": 0.1554,
+   "srd": 0.0
   },
   {
-   "game_pk": 822801,
-   "away": "New York Yankees",
-   "home": "Toronto Blue Jays",
-   "venue": "Rogers Centre",
-   "away_starter": "Will Warren",
-   "home_starter": "Patrick Corbin",
-   "p_home": 0.4097,
-   "pick": "New York Yankees",
-   "confidence": 0.5903,
-   "pyth_diff": -0.1386,
-   "form_diff": -0.0953,
-   "srd": -1.546,
+   "game_pk": 824750,
+   "away": "Toronto Blue Jays",
+   "home": "Boston Red Sox",
+   "venue": "Fenway Park",
+   "away_starter": "Dylan Cease",
+   "home_starter": "Payton Tolle",
+   "p_home": 0.5466,
+   "pick": "Boston Red Sox",
+   "confidence": 0.5466,
+   "pyth_diff": 0.0208,
+   "form_diff": -0.0225,
+   "srd": 0.0,
    "away_proj": {
-    "k": 5.7,
-    "er": 2.1,
-    "outs": 17.5
-   },
-   "home_proj": {
-    "k": 3.1,
+    "k": 6.8,
     "er": 2.4,
-    "outs": 14.0
+    "outs": 17.6
    }
   },
   {
-   "game_pk": 824506,
-   "away": "Arizona Diamondbacks",
+   "game_pk": 823535,
+   "away": "Chicago White Sox",
+   "home": "New York Yankees",
+   "venue": "Yankee Stadium",
+   "away_starter": "Davis Martin",
+   "home_starter": "Gerrit Cole",
+   "p_home": 0.6003,
+   "pick": "New York Yankees",
+   "confidence": 0.6003,
+   "pyth_diff": 0.109,
+   "form_diff": 0.0239,
+   "srd": 0.0,
+   "home_proj": {
+    "k": 9.0,
+    "er": 2.1,
+    "outs": 20.0
+   }
+  },
+  {
+   "game_pk": 824504,
+   "away": "New York Mets",
    "home": "Cincinnati Reds",
    "venue": "Great American Ball Park",
-   "away_starter": "Zac Gallen",
-   "home_starter": "Andrew Abbott",
-   "p_home": 0.4854,
-   "pick": "Arizona Diamondbacks",
-   "confidence": 0.5146,
-   "pyth_diff": -0.0365,
-   "form_diff": -0.0157,
-   "srd": -1.027,
-   "away_proj": {
-    "k": 6.6,
-    "er": 2.6,
-    "outs": 19.2
-   },
-   "home_proj": {
-    "k": 3.5,
-    "er": 2.6,
-    "outs": 15.2
-   }
-  },
-  {
-   "game_pk": 824424,
-   "away": "Detroit Tigers",
-   "home": "Cleveland Guardians",
-   "venue": "Progressive Field",
-   "away_starter": "Casey Mize",
-   "home_starter": "Gavin Williams",
-   "p_home": 0.5655,
-   "pick": "Cleveland Guardians",
-   "confidence": 0.5655,
-   "pyth_diff": 0.0175,
-   "form_diff": 0.0393,
-   "srd": 0.836,
-   "away_proj": {
-    "k": 5.2,
-    "er": 2.6,
-    "outs": 17.4
-   },
-   "home_proj": {
-    "k": 7.3,
-    "er": 2.2,
-    "outs": 19.0
-   }
-  },
-  {
-   "game_pk": 823615,
-   "away": "Atlanta Braves",
-   "home": "New York Mets",
-   "venue": "Citi Field",
-   "away_starter": "Bryce Elder",
-   "home_starter": "Freddy Peralta",
-   "p_home": 0.4647,
-   "pick": "Atlanta Braves",
-   "confidence": 0.5353,
-   "pyth_diff": -0.1532,
-   "form_diff": -0.0522,
-   "srd": 1.036,
-   "away_proj": {
-    "k": 4.7,
-    "er": 2.7,
-    "outs": 16.9
-   },
-   "home_proj": {
-    "k": 6.6,
-    "er": 2.0,
-    "outs": 16.3
-   }
-  },
-  {
-   "game_pk": 824099,
-   "away": "Houston Astros",
-   "home": "Kansas City Royals",
-   "venue": "Kauffman Stadium",
-   "away_starter": "Spencer Arrighetti",
-   "home_starter": "Stephen Kolek",
-   "p_home": 0.5179,
-   "pick": "Kansas City Royals",
-   "confidence": 0.5179,
-   "pyth_diff": -0.0249,
-   "form_diff": -0.1353,
-   "srd": 0.0,
-   "away_proj": {
-    "k": 6.7,
-    "er": 3.2,
-    "outs": 19.6
-   }
-  },
-  {
-   "game_pk": 823693,
-   "away": "St. Louis Cardinals",
-   "home": "Minnesota Twins",
-   "venue": "Target Field",
-   "away_starter": "Michael McGreevy",
-   "home_starter": "Taj Bradley",
-   "p_home": 0.5139,
-   "pick": "Minnesota Twins",
+   "away_starter": "Kodai Senga",
+   "home_starter": "Brady Singer",
+   "p_home": 0.4861,
+   "pick": "New York Mets",
    "confidence": 0.5139,
-   "pyth_diff": -0.0644,
-   "form_diff": -0.1257,
-   "srd": 0.813,
+   "pyth_diff": -0.0224,
+   "form_diff": -0.0656,
+   "srd": -1.344,
    "away_proj": {
-    "k": 4.3,
-    "er": 3.0,
-    "outs": 16.1
+    "k": 6.9,
+    "er": 2.2,
+    "outs": 17.7
    },
    "home_proj": {
-    "k": 4.9,
-    "er": 2.6,
-    "outs": 16.3
+    "k": 5.5,
+    "er": 3.0,
+    "outs": 17.5
    }
   },
   {
-   "game_pk": 824586,
-   "away": "Los Angeles Dodgers",
-   "home": "Chicago White Sox",
-   "venue": "Rate Field",
-   "away_starter": "Emmet Sheehan",
-   "home_starter": "Erick Fedde",
-   "p_home": 0.443,
-   "pick": "Los Angeles Dodgers",
-   "confidence": 0.557,
-   "pyth_diff": -0.1468,
-   "form_diff": -0.0202,
-   "srd": 0.0,
+   "game_pk": 824912,
+   "away": "San Francisco Giants",
+   "home": "Atlanta Braves",
+   "venue": "Truist Park",
+   "away_starter": "Adrian Houser",
+   "home_starter": "Grant Holmes",
+   "p_home": 0.644,
+   "pick": "Atlanta Braves",
+   "confidence": 0.644,
+   "pyth_diff": 0.1836,
+   "form_diff": 0.0623,
+   "srd": 0.0
+  },
+  {
+   "game_pk": 823775,
+   "away": "Cleveland Guardians",
+   "home": "Milwaukee Brewers",
+   "venue": "American Family Field",
+   "away_starter": "Slade Cecconi",
+   "home_starter": "Robert Gasser",
+   "p_home": 0.6113,
+   "pick": "Milwaukee Brewers",
+   "confidence": 0.6113,
+   "pyth_diff": 0.1271,
+   "form_diff": 0.0879,
+   "srd": 0.0
+  },
+  {
+   "game_pk": 823045,
+   "away": "San Diego Padres",
+   "home": "St. Louis Cardinals",
+   "venue": "Busch Stadium",
+   "away_starter": "Michael King",
+   "home_starter": "Andre Pallante",
+   "p_home": 0.5201,
+   "pick": "St. Louis Cardinals",
+   "confidence": 0.5201,
+   "pyth_diff": 0.0398,
+   "form_diff": 0.0909,
+   "srd": -1.551,
+   "away_proj": {
+    "k": 5.9,
+    "er": 2.3,
+    "outs": 18.2
+   },
    "home_proj": {
-    "k": 4.4,
-    "er": 3.0,
+    "k": 4.1,
+    "er": 2.9,
     "outs": 15.8
    }
   },
   {
-   "game_pk": 823777,
-   "away": "Philadelphia Phillies",
-   "home": "Milwaukee Brewers",
-   "venue": "American Family Field",
-   "away_starter": "Cristopher S\u00e1nchez",
-   "home_starter": "Kyle Harrison",
-   "p_home": 0.6199,
-   "pick": "Milwaukee Brewers",
-   "confidence": 0.6199,
-   "pyth_diff": 0.1425,
-   "form_diff": -0.0387,
-   "srd": 0.0,
+   "game_pk": 824667,
+   "away": "Colorado Rockies",
+   "home": "Chicago Cubs",
+   "venue": "Wrigley Field",
+   "away_starter": "Ryan Feltner",
+   "home_starter": "Edward Cabrera",
+   "p_home": 0.6477,
+   "pick": "Chicago Cubs",
+   "confidence": 0.6477,
+   "pyth_diff": 0.0963,
+   "form_diff": 0.0879,
+   "srd": 2.316,
+   "away_proj": {
+    "k": 4.5,
+    "er": 3.7,
+    "outs": 14.0
+   },
    "home_proj": {
-    "k": 6.8,
-    "er": 2.1,
-    "outs": 17.8
+    "k": 5.5,
+    "er": 2.6,
+    "outs": 14.4
    }
   },
   {
-   "game_pk": 824994,
-   "away": "Colorado Rockies",
-   "home": "Athletics",
-   "venue": "Las Vegas Ballpark",
-   "away_starter": "Tomoyuki Sugano",
-   "home_starter": "Jeffrey Springs",
-   "p_home": 0.5727,
-   "pick": "Athletics",
-   "confidence": 0.5727,
-   "pyth_diff": 0.0621,
-   "form_diff": 0.1679,
+   "game_pk": 822888,
+   "away": "Minnesota Twins",
+   "home": "Texas Rangers",
+   "venue": "Globe Life Field",
+   "away_starter": "Zebby Matthews",
+   "home_starter": "Kumar Rocker",
+   "p_home": 0.5614,
+   "pick": "Texas Rangers",
+   "confidence": 0.5614,
+   "pyth_diff": 0.0447,
+   "form_diff": -0.0003,
    "srd": 0.0,
    "home_proj": {
     "k": 5.3,
-    "er": 2.5,
-    "outs": 16.6
+    "er": 2.7,
+    "outs": 16.5
    }
   },
   {
-   "game_pk": 823212,
-   "away": "Chicago Cubs",
-   "home": "San Francisco Giants",
-   "venue": "Oracle Park",
-   "away_starter": "Ryan Rolison",
-   "home_starter": "Logan Webb",
-   "p_home": 0.4836,
-   "pick": "Chicago Cubs",
-   "confidence": 0.5164,
-   "pyth_diff": -0.0807,
-   "form_diff": -0.0684,
-   "srd": 0.0,
-   "home_proj": {
-    "k": 6.1,
-    "er": 2.9,
-    "outs": 19.8
-   }
-  },
-  {
-   "game_pk": 824021,
-   "away": "Tampa Bay Rays",
-   "home": "Los Angeles Angels",
-   "venue": "Angel Stadium",
-   "away_starter": "Casey Legumina",
-   "home_starter": "Grayson Rodriguez",
-   "p_home": 0.5104,
-   "pick": "Los Angeles Angels",
-   "confidence": 0.5104,
-   "pyth_diff": -0.0385,
-   "form_diff": 0.0788,
-   "srd": 0.0,
-   "home_proj": {
-    "k": 4.3,
-    "er": 5.0,
-    "outs": 12.6
-   }
-  },
-  {
-   "game_pk": 824751,
-   "away": "Texas Rangers",
-   "home": "Boston Red Sox",
-   "venue": "Fenway Park",
-   "away_starter": "Nathan Eovaldi",
-   "home_starter": "Connelly Early",
-   "p_home": 0.5412,
-   "pick": "Boston Red Sox",
-   "confidence": 0.5412,
-   "pyth_diff": -0.0077,
-   "form_diff": -0.0307,
-   "srd": 0.49,
+   "game_pk": 824182,
+   "away": "Detroit Tigers",
+   "home": "Houston Astros",
+   "venue": "Daikin Park",
+   "away_starter": "Framber Valdez",
+   "home_starter": "Hunter Brown",
+   "p_home": 0.5052,
+   "pick": "Houston Astros",
+   "confidence": 0.5052,
+   "pyth_diff": -0.0316,
+   "form_diff": -0.0117,
+   "srd": -0.362,
    "away_proj": {
-    "k": 5.7,
-    "er": 2.8,
-    "outs": 18.2
+    "k": 6.0,
+    "er": 2.3,
+    "outs": 19.3
    },
    "home_proj": {
-    "k": 5.1,
-    "er": 2.2,
-    "outs": 16.0
+    "k": 6.4,
+    "er": 2.4,
+    "outs": 18.2
    }
+  },
+  {
+   "game_pk": 825070,
+   "away": "Los Angeles Angels",
+   "home": "Arizona Diamondbacks",
+   "venue": "Chase Field",
+   "away_starter": "Reid Detmers",
+   "home_starter": "Merrill Kelly",
+   "p_home": 0.5829,
+   "pick": "Arizona Diamondbacks",
+   "confidence": 0.5829,
+   "pyth_diff": 0.0188,
+   "form_diff": 0.0156,
+   "srd": 1.513,
+   "away_proj": {
+    "k": 5.2,
+    "er": 3.0,
+    "outs": 15.5
+   },
+   "home_proj": {
+    "k": 5.9,
+    "er": 2.7,
+    "outs": 19.7
+   }
+  },
+  {
+   "game_pk": 824991,
+   "away": "Pittsburgh Pirates",
+   "home": "Athletics",
+   "venue": "Sutter Health Park",
+   "away_starter": "Mitch Keller",
+   "home_starter": "Jack Perkins",
+   "p_home": 0.5049,
+   "pick": "Athletics",
+   "confidence": 0.5049,
+   "pyth_diff": -0.0476,
+   "form_diff": 0.133,
+   "srd": 0.0,
+   "away_proj": {
+    "k": 6.9,
+    "er": 2.3,
+    "outs": 20.1
+   }
+  },
+  {
+   "game_pk": 823128,
+   "away": "Baltimore Orioles",
+   "home": "Seattle Mariners",
+   "venue": "T-Mobile Park",
+   "away_starter": "Brandon Young",
+   "home_starter": "Logan Gilbert",
+   "p_home": 0.5688,
+   "pick": "Seattle Mariners",
+   "confidence": 0.5688,
+   "pyth_diff": 0.0568,
+   "form_diff": 0.0081,
+   "srd": 0.0,
+   "home_proj": {
+    "k": 7.4,
+    "er": 2.6,
+    "outs": 20.8
+   }
+  },
+  {
+   "game_pk": 823939,
+   "away": "Tampa Bay Rays",
+   "home": "Los Angeles Dodgers",
+   "venue": "UNIQLO Field at Dodger Stadium",
+   "away_starter": "Drew Rasmussen",
+   "home_starter": "Justin Wrobleski",
+   "p_home": 0.6223,
+   "pick": "Los Angeles Dodgers",
+   "confidence": 0.6223,
+   "pyth_diff": 0.1458,
+   "form_diff": 0.0987,
+   "srd": 0.0
   }
  ],
  "edge_picks": [
-  823777,
-  822801
+  824667,
+  824912,
+  823939,
+  823775
  ]
 }

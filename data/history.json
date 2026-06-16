@@ -1,9 +1,49 @@
 {
- "updated": "2026-06-14T14:11:04+00:00",
+ "updated": "2026-06-16T14:50:27+00:00",
  "days": [
   {
-   "date": "2026-06-14",
+   "date": "2026-06-16",
    "edge_w": 0,
+   "edge_l": 0,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Chicago Cubs",
+     "matchup": "Colorado Rockies @ Chicago Cubs",
+     "confidence": 0.6477,
+     "p_home": 0.6477,
+     "outcome": "pending",
+     "score": null
+    },
+    {
+     "team": "Atlanta Braves",
+     "matchup": "San Francisco Giants @ Atlanta Braves",
+     "confidence": 0.644,
+     "p_home": 0.644,
+     "outcome": "pending",
+     "score": null
+    },
+    {
+     "team": "Los Angeles Dodgers",
+     "matchup": "Tampa Bay Rays @ Los Angeles Dodgers",
+     "confidence": 0.6223,
+     "p_home": 0.6223,
+     "outcome": "pending",
+     "score": null
+    },
+    {
+     "team": "Milwaukee Brewers",
+     "matchup": "Cleveland Guardians @ Milwaukee Brewers",
+     "confidence": 0.6113,
+     "p_home": 0.6113,
+     "outcome": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "date": "2026-06-14",
+   "edge_w": 2,
    "edge_l": 0,
    "edge_v": 0,
    "picks": [
@@ -12,16 +52,16 @@
      "matchup": "Philadelphia Phillies @ Milwaukee Brewers",
      "confidence": 0.6199,
      "p_home": 0.6199,
-     "outcome": "pending",
-     "score": null
+     "outcome": "win",
+     "score": "PHI 0-4 MIL"
     },
     {
      "team": "New York Yankees",
      "matchup": "New York Yankees @ Toronto Blue Jays",
      "confidence": 0.5903,
      "p_home": 0.4097,
-     "outcome": "pending",
-     "score": null
+     "outcome": "win",
+     "score": "NEW 8-3 TOR"
     }
    ]
   },
