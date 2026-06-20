@@ -1,10 +1,42 @@
 {
- "updated": "2026-06-16T14:50:27+00:00",
+ "updated": "2026-06-20T14:17:11+00:00",
  "days": [
   {
-   "date": "2026-06-16",
+   "date": "2026-06-20",
    "edge_w": 0,
    "edge_l": 0,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Los Angeles Dodgers",
+     "matchup": "Baltimore Orioles @ Los Angeles Dodgers",
+     "confidence": 0.6907,
+     "p_home": 0.6907,
+     "outcome": "pending",
+     "score": null
+    },
+    {
+     "team": "New York Yankees",
+     "matchup": "Cincinnati Reds @ New York Yankees",
+     "confidence": 0.6813,
+     "p_home": 0.6813,
+     "outcome": "pending",
+     "score": null
+    },
+    {
+     "team": "Chicago Cubs",
+     "matchup": "Toronto Blue Jays @ Chicago Cubs",
+     "confidence": 0.581,
+     "p_home": 0.581,
+     "outcome": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "date": "2026-06-16",
+   "edge_w": 2,
+   "edge_l": 2,
    "edge_v": 0,
    "picks": [
     {
@@ -12,32 +44,32 @@
      "matchup": "Colorado Rockies @ Chicago Cubs",
      "confidence": 0.6477,
      "p_home": 0.6477,
-     "outcome": "pending",
-     "score": null
+     "outcome": "loss",
+     "score": "COL 5-2 CHI"
     },
     {
      "team": "Atlanta Braves",
      "matchup": "San Francisco Giants @ Atlanta Braves",
      "confidence": 0.644,
      "p_home": 0.644,
-     "outcome": "pending",
-     "score": null
+     "outcome": "loss",
+     "score": "SAN 7-2 ATL"
     },
     {
      "team": "Los Angeles Dodgers",
      "matchup": "Tampa Bay Rays @ Los Angeles Dodgers",
      "confidence": 0.6223,
      "p_home": 0.6223,
-     "outcome": "pending",
-     "score": null
+     "outcome": "win",
+     "score": "TAM 0-1 LOS"
     },
     {
      "team": "Milwaukee Brewers",
      "matchup": "Cleveland Guardians @ Milwaukee Brewers",
      "confidence": 0.6113,
      "p_home": 0.6113,
-     "outcome": "pending",
-     "score": null
+     "outcome": "win",
+     "score": "CLE 1-2 MIL"
     }
    ]
   },

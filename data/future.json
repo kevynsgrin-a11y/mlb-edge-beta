@@ -1,98 +1,41 @@
 {
- "updated": "2026-06-16T14:50:28+00:00",
+ "updated": "2026-06-20T14:17:12+00:00",
  "note": "Edges shown only when both probable starters are posted; games still awaiting pitchers are counted, never predicted.",
  "days": [
   {
-   "date": "2026-06-17",
+   "date": "2026-06-21",
    "picks": [
     {
-     "team": "Atlanta Braves",
-     "matchup": "San Francisco Giants @ Atlanta Braves",
-     "confidence": 0.644,
-     "p_home": 0.644,
-     "away_starter": "Robbie Ray",
-     "home_starter": "JR Ritchie"
+     "team": "New York Yankees",
+     "matchup": "Cincinnati Reds @ New York Yankees",
+     "confidence": 0.6498,
+     "p_home": 0.6498,
+     "away_starter": "Chase Burns",
+     "home_starter": "Gerrit Cole"
     },
     {
      "team": "Los Angeles Dodgers",
-     "matchup": "Tampa Bay Rays @ Los Angeles Dodgers",
-     "confidence": 0.6223,
-     "p_home": 0.6223,
-     "away_starter": "Shane McClanahan",
-     "home_starter": "Shohei Ohtani"
-    },
-    {
-     "team": "Milwaukee Brewers",
-     "matchup": "Cleveland Guardians @ Milwaukee Brewers",
-     "confidence": 0.6113,
-     "p_home": 0.6113,
-     "away_starter": "Gavin Williams",
-     "home_starter": "Brandon Sproat"
-    },
-    {
-     "team": "New York Yankees",
-     "matchup": "Chicago White Sox @ New York Yankees",
-     "confidence": 0.6003,
-     "p_home": 0.6003,
-     "away_starter": "Anthony Kay",
-     "home_starter": "Carlos Rod\u00f3n"
-    },
-    {
-     "team": "Chicago Cubs",
-     "matchup": "Colorado Rockies @ Chicago Cubs",
-     "confidence": 0.593,
-     "p_home": 0.593,
-     "away_starter": "Sean Sullivan",
-     "home_starter": "Javier Assad"
-    },
-    {
-     "team": "Washington Nationals",
-     "matchup": "Kansas City Royals @ Washington Nationals",
-     "confidence": 0.5806,
-     "p_home": 0.5806,
-     "away_starter": "Luinder Avila",
-     "home_starter": "Zack Littell"
+     "matchup": "Baltimore Orioles @ Los Angeles Dodgers",
+     "confidence": 0.6479,
+     "p_home": 0.6479,
+     "away_starter": "Brandon Young",
+     "home_starter": "Emmet Sheehan"
     }
    ],
-   "awaiting_probables": 2,
-   "games": 14
+   "awaiting_probables": 4,
+   "games": 15
   },
   {
-   "date": "2026-06-18",
-   "picks": [
-    {
-     "team": "Atlanta Braves",
-     "matchup": "San Francisco Giants @ Atlanta Braves",
-     "confidence": 0.644,
-     "p_home": 0.644,
-     "away_starter": "Landen Roupp",
-     "home_starter": "Mart\u00edn P\u00e9rez"
-    },
-    {
-     "team": "Milwaukee Brewers",
-     "matchup": "Cleveland Guardians @ Milwaukee Brewers",
-     "confidence": 0.6113,
-     "p_home": 0.6113,
-     "away_starter": "Parker Messick",
-     "home_starter": "Shane Drohan"
-    },
-    {
-     "team": "New York Yankees",
-     "matchup": "Chicago White Sox @ New York Yankees",
-     "confidence": 0.6003,
-     "p_home": 0.6003,
-     "away_starter": "Sean Burke",
-     "home_starter": "Ryan Weathers"
-    }
-   ],
-   "awaiting_probables": 5,
-   "games": 9
-  },
-  {
-   "date": "2026-06-19",
+   "date": "2026-06-22",
    "picks": [],
-   "awaiting_probables": 14,
-   "games": 14
+   "awaiting_probables": 13,
+   "games": 13
+  },
+  {
+   "date": "2026-06-23",
+   "picks": [],
+   "awaiting_probables": 15,
+   "games": 15
   }
  ]
 }
