@@ -1,40 +1,23 @@
 {
- "updated": "2026-06-20T14:17:12+00:00",
+ "updated": "2026-06-21T14:09:05+00:00",
  "note": "Edges shown only when both probable starters are posted; games still awaiting pitchers are counted, never predicted.",
  "days": [
   {
-   "date": "2026-06-21",
-   "picks": [
-    {
-     "team": "New York Yankees",
-     "matchup": "Cincinnati Reds @ New York Yankees",
-     "confidence": 0.6498,
-     "p_home": 0.6498,
-     "away_starter": "Chase Burns",
-     "home_starter": "Gerrit Cole"
-    },
-    {
-     "team": "Los Angeles Dodgers",
-     "matchup": "Baltimore Orioles @ Los Angeles Dodgers",
-     "confidence": 0.6479,
-     "p_home": 0.6479,
-     "away_starter": "Brandon Young",
-     "home_starter": "Emmet Sheehan"
-    }
-   ],
-   "awaiting_probables": 4,
-   "games": 15
-  },
-  {
    "date": "2026-06-22",
    "picks": [],
-   "awaiting_probables": 13,
+   "awaiting_probables": 12,
    "games": 13
   },
   {
    "date": "2026-06-23",
    "picks": [],
-   "awaiting_probables": 15,
+   "awaiting_probables": 13,
+   "games": 15
+  },
+  {
+   "date": "2026-06-24",
+   "picks": [],
+   "awaiting_probables": 13,
    "games": 15
   }
  ]

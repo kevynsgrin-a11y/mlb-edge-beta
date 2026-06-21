@@ -1,8 +1,8 @@
 {
- "updated": "2026-06-20T14:17:11+00:00",
+ "updated": "2026-06-21T14:09:04+00:00",
  "days": [
   {
-   "date": "2026-06-20",
+   "date": "2026-06-21",
    "edge_w": 0,
    "edge_l": 0,
    "edge_v": 0,
@@ -10,26 +10,58 @@
     {
      "team": "Los Angeles Dodgers",
      "matchup": "Baltimore Orioles @ Los Angeles Dodgers",
-     "confidence": 0.6907,
-     "p_home": 0.6907,
+     "confidence": 0.646,
+     "p_home": 0.646,
      "outcome": "pending",
      "score": null
     },
     {
      "team": "New York Yankees",
      "matchup": "Cincinnati Reds @ New York Yankees",
-     "confidence": 0.6813,
-     "p_home": 0.6813,
+     "confidence": 0.6386,
+     "p_home": 0.6386,
      "outcome": "pending",
      "score": null
+    },
+    {
+     "team": "Philadelphia Phillies",
+     "matchup": "New York Mets @ Philadelphia Phillies",
+     "confidence": 0.5965,
+     "p_home": 0.5965,
+     "outcome": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "date": "2026-06-20",
+   "edge_w": 0,
+   "edge_l": 3,
+   "edge_v": 0,
+   "picks": [
+    {
+     "team": "Los Angeles Dodgers",
+     "matchup": "Baltimore Orioles @ Los Angeles Dodgers",
+     "confidence": 0.6907,
+     "p_home": 0.6907,
+     "outcome": "loss",
+     "score": "BAL 3-2 LOS"
+    },
+    {
+     "team": "New York Yankees",
+     "matchup": "Cincinnati Reds @ New York Yankees",
+     "confidence": 0.6813,
+     "p_home": 0.6813,
+     "outcome": "loss",
+     "score": "CIN 10-2 NEW"
     },
     {
      "team": "Chicago Cubs",
      "matchup": "Toronto Blue Jays @ Chicago Cubs",
      "confidence": 0.581,
      "p_home": 0.581,
-     "outcome": "pending",
-     "score": null
+     "outcome": "loss",
+     "score": "TOR 8-6 CHI"
     }
    ]
   },
