@@ -1,24 +1,24 @@
 {
- "updated": "2026-06-21T14:09:05+00:00",
+ "updated": "2026-06-22T13:36:36+00:00",
  "note": "Edges shown only when both probable starters are posted; games still awaiting pitchers are counted, never predicted.",
  "days": [
   {
-   "date": "2026-06-22",
-   "picks": [],
-   "awaiting_probables": 12,
-   "games": 13
-  },
-  {
    "date": "2026-06-23",
    "picks": [],
-   "awaiting_probables": 13,
+   "awaiting_probables": 4,
    "games": 15
   },
   {
    "date": "2026-06-24",
    "picks": [],
-   "awaiting_probables": 13,
+   "awaiting_probables": 5,
    "games": 15
+  },
+  {
+   "date": "2026-06-25",
+   "picks": [],
+   "awaiting_probables": 4,
+   "games": 9
   }
  ]
 }

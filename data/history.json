@@ -1,10 +1,10 @@
 {
- "updated": "2026-06-21T14:09:04+00:00",
+ "updated": "2026-06-22T13:36:35+00:00",
  "days": [
   {
    "date": "2026-06-21",
-   "edge_w": 0,
-   "edge_l": 0,
+   "edge_w": 1,
+   "edge_l": 2,
    "edge_v": 0,
    "picks": [
     {
@@ -12,24 +12,24 @@
      "matchup": "Baltimore Orioles @ Los Angeles Dodgers",
      "confidence": 0.646,
      "p_home": 0.646,
-     "outcome": "pending",
-     "score": null
+     "outcome": "loss",
+     "score": "BAL 12-1 LOS"
     },
     {
      "team": "New York Yankees",
      "matchup": "Cincinnati Reds @ New York Yankees",
      "confidence": 0.6386,
      "p_home": 0.6386,
-     "outcome": "pending",
-     "score": null
+     "outcome": "loss",
+     "score": "CIN 4-1 NEW"
     },
     {
      "team": "Philadelphia Phillies",
      "matchup": "New York Mets @ Philadelphia Phillies",
      "confidence": 0.5965,
      "p_home": 0.5965,
-     "outcome": "pending",
-     "score": null
+     "outcome": "win",
+     "score": "NEW 2-6 PHI"
     }
    ]
   },
